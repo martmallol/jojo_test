@@ -7,18 +7,16 @@ import Results from './Components/pages/Results';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-      <Navbar />
-      <Routes>
-
-      </Routes>
-      </div>
-    </Router>
+    <div className="App">
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path='/' exact element={ <Home /> } />
+          <Route path='/results' element={ <Results /> } />
+        </Routes>
+      </Router>
+    </div>  
   );
 }
 
 export default App;
-
-//<Route path='/' exact component={Home} />
-//<Route path='/results' component={Results} />

@@ -8,14 +8,18 @@ function Navbar() {
   return (
     <nav className='navbar'>
       <Link to='/' className='navbar-logo'> 
-        <img src={logo} class="navbar-logo" height={50}/> 
+        <img src={logo} class="navbar-logo" height={40}/> 
       </Link>
       <ul className='navbar-menu'>
         <li className='navbar-item'>
-          <Link to="/" className='navbar-link'>Home</Link>
+          <Link to="/" className='navbar-link'>
+            <a>Home</a>
+          </Link>
         </li>
         <li className='navbar-item'>
-          <Link to="/results" className='navbar-link'>Results</Link>
+          <Link to="/results" className='navbar-link'>
+            <a>Results</a>
+          </Link>
         </li>
       </ul>
     </nav>

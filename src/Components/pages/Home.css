@@ -1,0 +1,51 @@
+.banner {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 1.5rem auto;
+    text-align: center;
+    width: auto;
+    max-width: max-content;
+}
+
+.banner img {
+    border-radius: 1rem;
+    max-width:100%;
+}
+
+h1 {
+    padding: 1rem 1rem;
+    color: black;
+    background-color: rgba(245, 245, 245, 0.842);
+    border-radius: 0.5rem;
+    width:fit-content;
+}
+
+.title  {
+    padding: 1rem 1rem;
+    margin-top: -10rem;
+    position: relative;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.game-explanation {
+    margin-top: 3rem ;
+    margin-bottom: 2rem;
+    max-width: 900px;
+}
+
+.button {
+    color: #ffffff !important;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #3a10e5;
+    border: 0.1rem solid #3a10e5;
+    border-radius: 0.3rem;
+}
+
+.button:hover {
+    opacity: 0.8;
+    transition: opacity 0.15s;
+}

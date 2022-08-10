@@ -4,7 +4,7 @@ a:link, a:visited, a:active {
 }
 
 .navbar {
-    height: 80px;
+    height: 50px;
     display: flex;
     align-items: center;
     top: 0;
@@ -17,11 +17,11 @@ a:link, a:visited, a:active {
 
 .navbar-logo {
     margin-right: auto;
-    margin-left: 2rem;
+    margin-left: 1.1rem;
 }
 
 .navbar-menu {
-    margin-right: 2rem;
+    margin-right: 1.1rem;
 }
 
 .navbar-item {
@@ -32,6 +32,17 @@ a:link, a:visited, a:active {
 .navbar-link {
     color: black;
     display: flex;
-    padding: 0.5rem 2rem;
+    padding: 0.5rem;
+    margin: auto 2rem;
     height: 100%;
- }
+}
+
+a:hover {
+    color: #3a10e5;
+	transition: all .3s;
+}
+
+.navbar-logo:hover {
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
