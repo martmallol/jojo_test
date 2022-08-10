@@ -14,7 +14,7 @@ function Home() {
         bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
         bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla. </p>
       </div>
-      <a className='button' href='#'><span>Play now!</span></a>
+      <a className='button' href='/quiz'><span>Play now!</span></a>
     </section>
   )
 }
