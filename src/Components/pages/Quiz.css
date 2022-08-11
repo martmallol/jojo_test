@@ -1,0 +1,78 @@
+main {
+    border-radius: 10px;
+    background-color: lightseagreen;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+
+button {
+    text-decoration: none;
+    padding: 20px 50px;
+    font-size: 1.25rem;
+    line-height: 0.5rem;
+    position: relative;
+    width: auto;
+    height: 50px;
+    margin: 5px;
+    border-radius: 5px;
+    flex-direction: column;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+button:hover {
+    transform: translate(4px, -4px);
+    box-shadow: -8px 8px 0 white;
+    border-radius: 5px;
+
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    transform: translate(-2px, 2px);
+    
+    border-radius: inherit;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: transform 0.3s ease;
+}
+
+
+
+.answers button:focus {
+    color:blueviolet;
+    transform: translate(4px, -4px);
+    box-shadow: -8px 8px 0 white;
+}
+
+/*
+button:hover {
+    transform: translate(-6px, -6px);
+}
+
+button:hover::before {
+    transform: translate(2px, 2px);
+}
+
+
+.answers button:focus {
+    color:blueviolet;
+}
+
+.answers {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.back-next {
+
+}*/
