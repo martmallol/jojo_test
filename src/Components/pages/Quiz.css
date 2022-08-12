@@ -1,13 +1,35 @@
 main {
     border-radius: 10px;
-    background-color: lightseagreen;
+    background-color: rgb(255, 200, 214);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 1rem;
+    margin: 0.5rem;
 }
 
+/* Title */
+.question-number {
+    margin-top: 0.5rem;
+    font-size: 1.25rem;
+}
+
+/* Image */
+.image {
+    width: 550px;
+    height: 320px;
+    margin-bottom: 1rem;
+}
+
+.image img {
+    max-height: 100%; 
+    max-width: 100%; 
+    object-fit:fill;
+    border-radius: 20px;
+    border: 2px solid black;
+}
+
+/* Buttons */
 button {
     text-decoration: none;
     padding: 20px 50px;
@@ -18,24 +40,17 @@ button {
     height: 50px;
     margin: 5px;
     border-radius: 5px;
-    flex-direction: column;
+    background: white;
     border: 1px solid black;
     cursor: pointer;
     transition: transform 0.3s ease;
+    z-index: 1;
 }
 
-button:hover {
-    transform: translate(4px, -4px);
-    box-shadow: -8px 8px 0 white;
-    border-radius: 5px;
-
-}
-
-button::before {
+button::before, button::after {
     content: '';
     position: absolute;
-    transform: translate(-2px, 2px);
-    
+
     border-radius: inherit;
     height: 100%;
     width: 100%;
@@ -45,34 +60,42 @@ button::before {
     transition: transform 0.3s ease;
 }
 
-
-
-.answers button:focus {
-    color:blueviolet;
-    transform: translate(4px, -4px);
-    box-shadow: -8px 8px 0 white;
+button:hover {
+    transform: translate(1px, -1px);
+    background-color: rgb(255, 240, 190);
+    box-shadow: -3px 3px 0 black;
+    border-radius: 5px;
 }
 
-/*
-button:hover {
-    transform: translate(-6px, -6px);
+button:hover::after {
+    transform: translate(-3px, 3px);
 }
 
 button:hover::before {
-    transform: translate(2px, 2px);
-}
-
-
-.answers button:focus {
-    color:blueviolet;
+    transform: translate(-3px, 3px);
 }
 
 .answers {
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.answers button:focus {
+    color:rgb(0, 0, 0);
+    background-color: rgb(253, 200, 25);
+
+    transform: translate(2.5px, -2.5px);
+    box-shadow: -3px 3px 0 rgb(0, 0, 0);
+    transition: transform 0.3s ease;
+}
+
+.back-next button {
+    background-color: rgb(250, 119, 255);
 }
 
 .back-next {
+    margin-top: 0.5rem;
 
-}*/
+}

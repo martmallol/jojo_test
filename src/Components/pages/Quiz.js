@@ -78,14 +78,18 @@ function Quiz() {
     }
   }
 
-  // Interface
+  // Interface 
+
   return (
-    <main>
+    <main className='Quiz'>
         <div className='question-number'>
             <span> Question {actualQuestion + 1} of</span> {questions.length}
         </div>
         <div className='question-title'>
-            {questions[actualQuestion].title}
+            <h2>{questions[actualQuestion].title}</h2>
+        </div>
+        <div className='image'>
+        <img src={questions[actualQuestion].image} />
         </div>
         <div className='answers'>
             {questions[actualQuestion].options.map((answer) => (
