@@ -63,16 +63,16 @@ function Quiz() {
         return (<div><button onClick={handleNextPage}>Next</button></div>)
     } else if (actualQuestion == (questions.length - 1)) {
         return (
-        <div>
-            <button onClick={handlePreviousPage}>Back</button> 
-            <button onClick={handleGameFinish}>Get my JoJo</button>
+        <div className='final-game'>
+            <button className='back' onClick={handlePreviousPage}>Back</button> 
+            <button className='get-my-jojo' onClick={handleGameFinish}>Get my JoJo</button>
         </div>
         )
     } else {
         return (
-        <div>
-            <button onClick={handlePreviousPage}>Back</button> 
-            <button onClick={handleNextPage}>Next</button>
+        <div className='mid-game'>
+            <button className='back' onClick={handlePreviousPage}>Back</button> 
+            <button className='next' onClick={handleNextPage}>Next</button>
         </div>
         )
     }
@@ -88,16 +88,18 @@ function Quiz() {
         <div className='question-title'>
             <h2>{questions[actualQuestion].title}</h2>
         </div>
-        <div className='image'>
-        <img src={questions[actualQuestion].image} />
-        </div>
-        <div className='answers'>
-            {questions[actualQuestion].options.map((answer) => (
-                <button onClick={() => {setActualAnswer(answer.id);}}> {answer.textAnswer}</button>
-            ))}
-        </div>
-        <div className='back-next'>
-            {whichButtons()}
+        <div className='box'>
+          <div className='image'>
+            <img src={questions[actualQuestion].image } />
+          </div>
+          <div className='answers'>
+              {questions[actualQuestion].options.map((answer) => (
+                  <button onClick={() => {setActualAnswer(answer.id);}}> {answer.textAnswer}</button>
+              ))}
+          </div>
+          <div className='back-next'>
+              {whichButtons()}
+          </div>
         </div>
         <div className='comoEstanLasCosas(lotengoqueborrar)'>
             {characters.giorno}

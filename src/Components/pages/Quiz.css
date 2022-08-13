@@ -5,7 +5,12 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0.5rem;
+    margin: 1.5rem auto;
+    max-width: 760px;
+    max-height: 800px;
+    padding: 30px;
+    position: relative;
+    border: 1px solid black;
 }
 
 /* Title */
@@ -16,9 +21,9 @@ main {
 
 /* Image */
 .image {
-    width: 550px;
     height: 320px;
     margin-bottom: 1rem;
+    /*background-color: aliceblue;*/
 }
 
 .image img {
@@ -43,7 +48,7 @@ button {
     background: white;
     border: 1px solid black;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.1s ease;
     z-index: 1;
 }
 
@@ -57,7 +62,7 @@ button::before, button::after {
     left: 0;
     bottom: 0;
     z-index: -1;
-    transition: transform 0.3s ease;
+    transition: transform 0.1s ease;
 }
 
 button:hover {
@@ -80,15 +85,16 @@ button:hover::before {
     flex-direction: column;
     text-align: center;
     justify-content: center;
+    /*background-color: yellowgreen;*/    
 }
+
 
 .answers button:focus {
     color:rgb(0, 0, 0);
     background-color: rgb(253, 200, 25);
-
     transform: translate(2.5px, -2.5px);
     box-shadow: -3px 3px 0 rgb(0, 0, 0);
-    transition: transform 0.3s ease;
+    transition: transform 0.1s ease;
 }
 
 .back-next button {
@@ -97,5 +103,21 @@ button:hover::before {
 
 .back-next {
     margin-top: 0.5rem;
+    /*background-color: brown;*/
+}
 
+.mid-game, .final-game {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/*.mid-game button, .final-game button {
+    margin-right: auto;
+    margin-left: auto;
+    min-width: 20%;
+}*/
+
+.back {
+    margin-right: auto;
 }

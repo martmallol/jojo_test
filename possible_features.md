@@ -4,3 +4,4 @@
 - Add a "pie" diagram (like in JoJos cutscenes) for every character
 - Set multiple time intervals for every component on the 'You are...' page. So every object appears on the screen at different times.
 - QR at the end to share your results. I could also add some social network logos.
+- When you click on an image, it flips and it shows its back. On its back you can see the chapter where that scene occurs.
