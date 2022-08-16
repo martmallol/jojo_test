@@ -30,12 +30,17 @@ function Quiz() {
     characters.giorno = 7;
   }
 
+  const progressSteps = [... document.querySelectorAll(".progress-step")];
+
   // Handler for choosing an option and clicking next page
   const handleNextPage = () => {
     if(actualAnswer != -1) {
+        const upcomingBullet = progressSteps[actualQuestion + 1];
+        upcomingBullet.classList.add("progress-step-active");
         updateCharactersValues(actualAnswer);
         setActualAnswer(-1);
         setActualQuestion(actualQuestion+1);
+        
     } else {
         // Error, debes elegir una respuesta!!
     }
@@ -43,8 +48,11 @@ function Quiz() {
 
   // Handler for clicking previous page
   const handlePreviousPage = () => {
+    const previousBullet = progressSteps[actualQuestion];
+    previousBullet.classList.remove("progress-step-active");
     setActualQuestion(actualQuestion-1);
     setActualAnswer(-1)
+    //updateProgressBar();
   };
 
   // Handler for game's finishcharacters[key]
@@ -78,15 +86,34 @@ function Quiz() {
     }
   }
 
+  const getLabelArray = () => {
+    let arr = [];
+    for (let i = 0; i < questions.length; i++) {
+      if(i == 0) {
+        arr.push("progress-step progress-step-active");
+      } else {
+        arr.push("progress-step");
+      }
+    }
+    return arr;
+  }
+  
+  let labelArray = getLabelArray();
+
   // Interface 
 
   return (
     <main className='Quiz'>
+
+        <div className='progress-bar' id='progress-bar'>
+          {labelArray.map((elem) => (
+            <div className={elem}></div>))}
+        </div>
         <div className='question-number'>
-            <span> Question {actualQuestion + 1} of</span> {questions.length}
+          <span> Question {actualQuestion + 1} of</span> {questions.length}
         </div>
         <div className='question-title'>
-            <h2>{questions[actualQuestion].title}</h2>
+          <h2>{questions[actualQuestion].title}</h2>
         </div>
         <div className='box'>
           <div className='image'>
@@ -94,15 +121,15 @@ function Quiz() {
           </div>
           <div className='answers'>
               {questions[actualQuestion].options.map((answer) => (
-                  <button onClick={() => {setActualAnswer(answer.id);}}> {answer.textAnswer}</button>
+                <button onClick={() => {setActualAnswer(answer.id);}}> {answer.textAnswer}</button>
               ))}
           </div>
           <div className='back-next'>
-              {whichButtons()}
+            {whichButtons()}
           </div>
         </div>
         <div className='comoEstanLasCosas(lotengoqueborrar)'>
-            {characters.giorno}
+          {characters.giorno}
         </div>
     </main>
   )
