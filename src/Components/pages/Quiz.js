@@ -3,44 +3,46 @@ import questions from './questions';
 import './Quiz.css'
 
 function Quiz() {
-  const [actualQuestion, setActualQuestion] = useState(0);
-  const [isFinished, setIsFinished] = useState(false);
-  const [actualAnswer, setActualAnswer] = useState(-1);
-  let characters = {
+  const [myCharacters, setCharacters] = useState({
     jonathan: 0, 
     joseph: 0,
     jotaro: 0,
     josuke: 0,
     giorno: 0,
-    jolyne: 0};
+    jolyne: 0});
+  const [actualQuestion, setActualQuestion] = useState(0);
+  const [isFinished, setIsFinished] = useState(false);
+  const [actualAnswer, setActualAnswer] = useState(-1);
+  const [previousAnswer, setPreviousAnswer] = useState(-1);
 
   const updateCharactersValues = (elem) => {
-    console.log(characters);
     const answer = questions[actualQuestion].options[elem];
     // Por que no me cambia los valores?????
-    Object.keys(characters).forEach(key => {
-        characters[key] += answer[key];
+    Object.keys(myCharacters).forEach(key => {
+        myCharacters[key] += answer[key];
     });
-    console.log(characters);
   };
 
-  const restartCharactersValues = (elem) => {};
-
-  const changeValue = () => {
-    characters.giorno = 7;
-  }
+  const restartCharactersValues = (elem) => {
+    if(elem != -1) {
+      const answer = questions[actualQuestion-1].options[elem];
+      Object.keys(myCharacters).forEach(key => {
+        myCharacters[key] -= answer[key];
+      });
+    }
+  };
 
   const progressSteps = [... document.querySelectorAll(".progress-step")];
-
+    
   // Handler for choosing an option and clicking next page
   const handleNextPage = () => {
     if(actualAnswer != -1) {
         const upcomingBullet = progressSteps[actualQuestion + 1];
         upcomingBullet.classList.add("progress-step-active");
         updateCharactersValues(actualAnswer);
+        setPreviousAnswer(actualAnswer);
         setActualAnswer(-1);
         setActualQuestion(actualQuestion+1);
-        
     } else {
         // Error, debes elegir una respuesta!!
     }
@@ -50,9 +52,9 @@ function Quiz() {
   const handlePreviousPage = () => {
     const previousBullet = progressSteps[actualQuestion];
     previousBullet.classList.remove("progress-step-active");
+    restartCharactersValues(previousAnswer);
     setActualQuestion(actualQuestion-1);
     setActualAnswer(-1)
-    //updateProgressBar();
   };
 
   // Handler for game's finishcharacters[key]
@@ -129,7 +131,7 @@ function Quiz() {
           </div>
         </div>
         <div className='comoEstanLasCosas(lotengoqueborrar)'>
-          {characters.giorno}
+          {myCharacters.giorno}
         </div>
     </main>
   )

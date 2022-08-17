@@ -7,7 +7,7 @@ main {
     align-items: center;
     margin: 1.5rem auto;
     max-width: 760px;
-    max-height: 800px;
+    max-height: 750px;
     padding: 30px;
     position: relative;
     border: 1px solid black;
@@ -18,12 +18,12 @@ main {
     position: relative;
     display: flex;
     justify-content: space-between;
-    /*margin: 2rem 0 4rem;*/
+    margin-top: 1rem;
 }
 
 .progress-step {
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 1.5rem;
+    height: 1.5rem;
     background-color: #ffffff;
     border-radius: 50%;
     /* So they're not positioned as a column*/
@@ -47,7 +47,7 @@ main {
 
 /* Image */
 .image {
-    height: 320px;
+    height: 300px;
     margin-bottom: 1rem;
     /*background-color: aliceblue;*/
 }
@@ -57,7 +57,7 @@ main {
     max-width: 100%; 
     object-fit:fill;
     border-radius: 20px;
-    border: 2px solid black;
+    border: 1px solid black;
 }
 
 /* Buttons */
