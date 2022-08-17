@@ -44,13 +44,14 @@ function Quiz() {
     if(actualAnswer != -1) {
         const upcomingBullet = progressSteps[actualQuestion + 1];
         upcomingBullet.classList.add("progress-step-active");
+        myCard.classList.remove("is-flipped");
         updateCharactersValues(actualAnswer);
         setPreviousAnswer(actualAnswer);
         answersHistory.push(actualAnswer);
-        console.log(answersHistory);
         setActualAnswer(-1);
         setActualQuestion(actualQuestion+1);
         setError(false);
+        console.log(myCharacters);
     } else {
         // Error, debes elegir una respuesta!!
         setError(true);
@@ -61,6 +62,7 @@ function Quiz() {
   const handlePreviousPage = () => {
     const previousBullet = progressSteps[actualQuestion];
     previousBullet.classList.remove("progress-step-active");
+    myCard.classList.remove("is-flipped");
     setActualQuestion(actualQuestion-1);
     setActualAnswer(-1)
     answersHistory.pop();
@@ -69,6 +71,7 @@ function Quiz() {
       setPreviousAnswer(answersHistory[answersHistory.length-1]);
       restartCharactersValues(previousAnswer);
     }
+    console.log(myCharacters);
   };
 
   // Handler for game's finishcharacters[key]
@@ -116,6 +119,11 @@ function Quiz() {
   
   let labelArray = getLabelArray();
 
+  const myCard = document.querySelector(".card-inner");
+  const cardFunction = () => {
+    myCard.classList.toggle("is-flipped");
+  }
+
   // Interface 
 
   return (
@@ -132,9 +140,20 @@ function Quiz() {
           <h2>{questions[actualQuestion].title}</h2>
         </div>
         <div className='box'>
-          <div className='image'>
-            <img src={questions[actualQuestion].image } />
+          <div className='card' onClick={cardFunction}>
+            <div id='hi' className='card-inner'>
+              <div className='face front'>
+                <img src={questions[actualQuestion].image } />
+              </div>
+              <div className='face back'>
+                <div className='content'>
+                  <h3>{questions[actualQuestion].saga}</h3>
+                  <p>{questions[actualQuestion].show}</p>
+                </div>
+              </div>
+            </div>
           </div>
+          
           <div className='answers'>
               {questions[actualQuestion].options.map((answer) => (
                 <button onClick={() => {setActualAnswer(answer.id);}}> {answer.textAnswer}</button>
