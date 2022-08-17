@@ -3,6 +3,9 @@ import questions from './questions';
 import './Quiz.css'
 
 function Quiz() {
+  
+  // Logica
+
   const [myCharacters, setCharacters] = useState({
     jonathan: 0, 
     joseph: 0,
@@ -14,6 +17,7 @@ function Quiz() {
   const [isFinished, setIsFinished] = useState(false);
   const [actualAnswer, setActualAnswer] = useState(-1);
   const [previousAnswer, setPreviousAnswer] = useState(-1);
+  const [answersHistory, setAnswersHistory] = useState([]);
 
   const updateCharactersValues = (elem) => {
     const answer = questions[actualQuestion].options[elem];
@@ -41,6 +45,8 @@ function Quiz() {
         upcomingBullet.classList.add("progress-step-active");
         updateCharactersValues(actualAnswer);
         setPreviousAnswer(actualAnswer);
+        answersHistory.push(actualAnswer);
+        console.log(answersHistory);
         setActualAnswer(-1);
         setActualQuestion(actualQuestion+1);
     } else {
@@ -52,9 +58,14 @@ function Quiz() {
   const handlePreviousPage = () => {
     const previousBullet = progressSteps[actualQuestion];
     previousBullet.classList.remove("progress-step-active");
-    restartCharactersValues(previousAnswer);
     setActualQuestion(actualQuestion-1);
     setActualAnswer(-1)
+    answersHistory.pop();
+    console.log(answersHistory);
+    if(answersHistory) {
+      setPreviousAnswer(answersHistory[answersHistory.length-1]);
+      restartCharactersValues(previousAnswer);
+    }
   };
 
   // Handler for game's finishcharacters[key]
