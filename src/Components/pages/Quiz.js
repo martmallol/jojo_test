@@ -18,6 +18,7 @@ function Quiz() {
   const [actualAnswer, setActualAnswer] = useState(-1);
   const [previousAnswer, setPreviousAnswer] = useState(-1);
   const [answersHistory, setAnswersHistory] = useState([]);
+  const [error, setError] = useState(false);
 
   const updateCharactersValues = (elem) => {
     const answer = questions[actualQuestion].options[elem];
@@ -49,8 +50,10 @@ function Quiz() {
         console.log(answersHistory);
         setActualAnswer(-1);
         setActualQuestion(actualQuestion+1);
+        setError(false);
     } else {
         // Error, debes elegir una respuesta!!
+        setError(true);
     }
   };
 
@@ -61,7 +64,7 @@ function Quiz() {
     setActualQuestion(actualQuestion-1);
     setActualAnswer(-1)
     answersHistory.pop();
-    console.log(answersHistory);
+    setError(false);
     if(answersHistory) {
       setPreviousAnswer(answersHistory[answersHistory.length-1]);
       restartCharactersValues(previousAnswer);
@@ -97,7 +100,7 @@ function Quiz() {
         </div>
         )
     }
-  }
+  };
 
   const getLabelArray = () => {
     let arr = [];
@@ -109,7 +112,7 @@ function Quiz() {
       }
     }
     return arr;
-  }
+  };
   
   let labelArray = getLabelArray();
 
@@ -141,9 +144,7 @@ function Quiz() {
             {whichButtons()}
           </div>
         </div>
-        <div className='comoEstanLasCosas(lotengoqueborrar)'>
-          {myCharacters.giorno}
-        </div>
+        {error ? <div className='error'><label>You have to choose an option!</label></div> : ''}
     </main>
   )
 }

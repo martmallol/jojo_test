@@ -30,7 +30,7 @@ const questions = [
         options: [
             {id: 0, textAnswer: 'Squid Ink Spaghetti', jonathan: 0, joseph: 3, jotaro: 0, josuke:0, giorno: 1, jolyne: 0},
             {id: 1, textAnswer: 'Cigarettes and a Mojito', jonathan: 0, joseph: 0, jotaro: 3, josuke:0, giorno: 0, jolyne: 0},
-            {id: 2, textAnswer: 'Caprese Salad', jonathan: 0, joseph: 0, jotaro: 0, josuke: 3, giorno: 3, jolyne: 0},
+            {id: 2, textAnswer: 'Caprese Salad', jonathan: 0, joseph: 0, jotaro: 0, josuke: 3, giorno: 3, jolyne: 0 },
             {id: 3, textAnswer: 'Hot Dog and Coca Cola', jonathan: 0, joseph: 1, jotaro: 0, josuke:0, giorno: 0, jolyne: 3}
         ]
     },
@@ -38,7 +38,7 @@ const questions = [
         title: 'What are your plans for the weekend?',
         image: imgFour,
         options: [
-            {id: 0, textAnswer: 'Look at yourself in the mirror for 8 straight hours', jonathan: 0, joseph: 3,  jotaro: 0, josuke:0, giorno: 1, jolyne: 0},
+            {id: 0, textAnswer: 'Look at yourself in the mirror for 8 straight hours', jonathan: 0, joseph: 3, jotaro: 0, josuke:0, giorno: 1, jolyne: 0},
             {id: 1, textAnswer: 'Go to a poker tournament', jonathan: 0, joseph: 1, jotaro: 3, josuke: 1, giorno: 0, jolyne: 0},
             {id: 2, textAnswer: 'Wait eagerly until the hour of tea arrives', jonathan: 3, joseph: 0, jotaro: 0, josuke: 0, giorno: 0, jolyne: 0},
             {id: 3, textAnswer: 'Befriend with an alien', jonathan: 0, joseph: 0, jotaro: 0, josuke: 3, giorno: 0, jolyne: 3}

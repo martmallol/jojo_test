@@ -7,7 +7,7 @@ main {
     align-items: center;
     margin: 1.5rem auto;
     max-width: 760px;
-    max-height: 750px;
+    max-height: 770px;
     padding: 30px;
     position: relative;
     border: 1px solid black;
@@ -18,7 +18,7 @@ main {
     position: relative;
     display: flex;
     justify-content: space-between;
-    margin-top: 1rem;
+    
 }
 
 .progress-step {
@@ -146,4 +146,13 @@ button:hover::before {
 
 .back {
     margin-right: auto;
+}
+
+/* Label */
+label {
+    color: red;
+}
+
+.error {
+    margin-top: 1rem;
 }
