@@ -130,42 +130,44 @@ function Quiz() {
 
   return (
     <main className='Quiz'>
+      <div className='progress-bar' id='progress-bar'>
+        {labelArray.map((elem) => (
+          <div className={elem}></div>))}
+      </div>
+      
+      <div className='question-number'>
+        <span> Question {actualQuestion + 1} of</span> {questions.length}
+      </div>
+      
+      <div className='question-title'>
+        <h2>{questions[actualQuestion].title}</h2>
+      </div>
 
-        <div className='progress-bar' id='progress-bar'>
-          {labelArray.map((elem) => (
-            <div className={elem}></div>))}
-        </div>
-        <div className='question-number'>
-          <span> Question {actualQuestion + 1} of</span> {questions.length}
-        </div>
-        <div className='question-title'>
-          <h2>{questions[actualQuestion].title}</h2>
-        </div>
-        <div className='box'>
-          <div className='card' onClick={cardFunction}>
-            <div id='hi' className='card-inner'>
-              <div className='face front'>
-                <img src={questions[actualQuestion].image } />
-              </div>
-              <div className='face back'>
-                <div className='content'>
-                  <h3>{questions[actualQuestion].saga}</h3>
-                  <p>{questions[actualQuestion].show}</p>
-                </div>
+      <div className='box'>
+        <div className='card' onClick={cardFunction}>
+          <div id='hi' className='card-inner'>
+            <div className='face front'>
+              <img src={questions[actualQuestion].image } />
+            </div>
+            <div className='face back'>
+              <div className='content'>
+                <h3>{questions[actualQuestion].saga}</h3>
+                <p>{questions[actualQuestion].show}</p>
               </div>
             </div>
           </div>
-          
-          <div className='answers'>
-              {questions[actualQuestion].options.map((answer) => (
-                <button onClick={() => {setActualAnswer(answer.id);}}> {answer.textAnswer}</button>
-              ))}
-          </div>
-          <div className='back-next'>
-            {whichButtons()}
-          </div>
         </div>
-        {error ? <div className='error'><label>You have to choose an option!</label></div> : ''}
+        
+        <div className='answers'>
+            {questions[actualQuestion].options.map((answer) => (
+              <button onClick={() => {setActualAnswer(answer.id);}}> {answer.textAnswer}</button>
+            ))}
+        </div>
+        <div className='back-next'>
+          {whichButtons()}
+        </div>
+      </div>
+      {error ? <div className='error'><label>You have to choose an option!</label></div> : ''}
     </main>
   )
 }

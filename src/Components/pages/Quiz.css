@@ -1,4 +1,4 @@
-main {
+.Quiz {
     border-radius: 10px;
     background-color: rgb(255, 200, 214);
     display: flex;
@@ -44,6 +44,8 @@ main {
     margin-top: 0.5rem;
     font-size: 1.25rem;
 }
+
+
 
 /* Card */
 .card {
@@ -111,7 +113,7 @@ main {
 
 
 /* Buttons */
-button {
+ button {
     text-decoration: none;
     padding: 20px 50px;
     font-size: 1.25rem;

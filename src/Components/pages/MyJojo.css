@@ -1,0 +1,104 @@
+.MyJojo {
+    margin: 0 auto;
+    padding: 0;
+    font-size: 1.2rem;
+}
+
+/* Page */
+.MyJojo {
+    padding: 0;
+    margin-top: 8.5rem; 
+    background-color: aqua;
+    max-width: 1000px;
+    height: auto;
+    box-sizing: border-box;
+}
+
+/* Title */
+.title {
+    background-color: red;
+}
+/* Image */
+.body{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: yellow;
+    justify-content: center;
+}
+
+.picture {
+    background-color: pink;
+    max-width: 450px;
+    max-height: 700px;
+    flex: 50%;
+
+}
+
+.picture img {
+    border-radius: 1rem;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: fill;
+    border: 1px solid black;
+}
+
+/* Character description */
+.character-info {
+    background-color: orange;
+    justify-content: center;
+    flex: 42%;
+    padding: 1.5rem;
+}
+
+.description {
+    background-color: violet;
+    padding: 0.5rem;
+    
+}
+.hola {
+    background-color: wheat;
+    padding: 1rem;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Submit */
+.submit {
+    background-color: green;
+    padding: 0.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid black;
+
+}
+
+input {
+    width: 40%;
+    font-size: 1.2rem;
+    padding: 0.4rem;
+    margin-left: 0.5rem;
+    margin-right: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.2rem;
+}
+
+/* Play again button */
+
+/* Share result */
+.share {
+    background-color: brown;
+    padding: 1rem;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+}
+
+.share a {
+    width: auto;
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}

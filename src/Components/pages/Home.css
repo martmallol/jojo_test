@@ -13,7 +13,7 @@
     max-width:100%;
 }
 
-h1 {
+.banner h1 {
     padding: 1rem 1rem;
     color: black;
     background-color: rgba(245, 245, 245, 0.842);
@@ -48,4 +48,5 @@ h1 {
 .button:hover {
     opacity: 0.8;
     transition: opacity 0.15s;
+    cursor: pointer;
 }
