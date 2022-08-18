@@ -47,7 +47,8 @@ main {
 
 /* Card */
 .card {
-    margin: 1rem 0.5rem;
+    margin: auto 0.5rem;
+    margin-bottom: 1rem;
     width: 550px;
     height: 300px;
     perspective: 2500px;

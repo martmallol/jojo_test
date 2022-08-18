@@ -73,14 +73,16 @@ function Quiz() {
     }
     console.log(myCharacters);
   };
-
+  let getMyJojo = document.getElementById('get-my-jojo');
   // Handler for game's finishcharacters[key]
   const handleGameFinish = () => {
     if(actualAnswer != -1) {
         updateCharactersValues(actualAnswer);
-        setIsFinished(true);
+        setIsFinished(true); // Do I actually need this variable?
+        window.location.href = '/get-my-jojo'; //Gies to final page
     } else {
         // Error, debes elegir una respuesta!!
+        setError(true);
     }
   };
 
@@ -92,7 +94,7 @@ function Quiz() {
         return (
         <div className='final-game'>
             <button className='back' onClick={handlePreviousPage}>Back</button> 
-            <button className='get-my-jojo' onClick={handleGameFinish}>Get my JoJo</button>
+            <button className='get-my-jojo' onClick={handleGameFinish} ><a id='get-my-jojo'>Get my JoJo</a></button>
         </div>
         )
     } else {
