@@ -15,8 +15,19 @@
 }
 
 /* Title */
-.title {
+.MyJojo .title {
     background-color: red;
+    padding: 0;
+    text-align:left;
+}
+
+.MyJojo .title h1 {
+    margin-bottom: 0.5rem;
+}
+
+.MyJojo h2 {
+    font-size: 5rem;
+    margin: 0;
 }
 /* Image */
 .body{
@@ -31,7 +42,6 @@
     max-width: 450px;
     max-height: 700px;
     flex: 50%;
-
 }
 
 .picture img {
@@ -47,14 +57,13 @@
     background-color: orange;
     justify-content: center;
     flex: 42%;
-    padding: 1.5rem;
 }
 
 .description {
     background-color: violet;
     padding: 0.5rem;
-    
 }
+
 .hola {
     background-color: wheat;
     padding: 1rem;
