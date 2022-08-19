@@ -1,8 +1,14 @@
 import React from 'react'
 import './MyJojo.css'
 import jolyneee from '../../img/jolyne.jpg'
+import charactersInfo from '../../characters-info/characters'
 
-function MyJojo() {
+function MyJojo({ response }) {
+  /*const yourJojo = () => {
+    let you = 0;
+    return you;
+  }*/
+
   return (
     <main className='MyJojo'>
       <div className='title'>
@@ -31,7 +37,7 @@ function MyJojo() {
             </div>
 
             <div className='share'>
-              <a className='button'><span>Play Again</span></a>
+              <a className='button' onClick={window.location.href} href='./quiz'><span>Play Again</span></a>
               <a className='button'><span>Share</span></a>
             </div>
           </div>

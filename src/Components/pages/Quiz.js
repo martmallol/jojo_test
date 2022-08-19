@@ -1,12 +1,14 @@
 import React, {useState} from 'react';
-import questions from './questions';
+import { useNavigate } from 'react-router-dom';
+import questions from '../../characters-info/questions';
 import './Quiz.css'
 
-function Quiz() {
+
+function Quiz({ setResponse }) {
   
   // Logica
 
-  const [myCharacters, setCharacters] = useState({
+const [myCharacters, setCharacters] = useState({
     jonathan: 0, 
     joseph: 0,
     jotaro: 0,
@@ -14,7 +16,6 @@ function Quiz() {
     giorno: 0,
     jolyne: 0});
   const [actualQuestion, setActualQuestion] = useState(0);
-  const [isFinished, setIsFinished] = useState(false);
   const [actualAnswer, setActualAnswer] = useState(-1);
   const [previousAnswer, setPreviousAnswer] = useState(-1);
   const [answersHistory, setAnswersHistory] = useState([]);
@@ -73,17 +74,22 @@ function Quiz() {
     }
     console.log(myCharacters);
   };
+
   let getMyJojo = document.getElementById('get-my-jojo');
+  const navigation = useNavigate();
   // Handler for game's finishcharacters[key]
   const handleGameFinish = () => {
     if(actualAnswer != -1) {
+      // ACA TENGO QUE CAMBIAR COSASSSSSSSS
         updateCharactersValues(actualAnswer);
-        setIsFinished(true); // Do I actually need this variable?
-        window.location.href = '/get-my-jojo'; //Gies to final page
+        setResponse(myCharacters);
+        navigation('/get-my-jojo');
+        //console.log(response);
+        //window.location.href = '/get-my-jojo'; // Goes to final page
     } else {
         // Error, debes elegir una respuesta!!
         setError(true);
-    }
+    }   
   };
 
   // What buttons should there be, depending on the question we are currently on
@@ -172,4 +178,4 @@ function Quiz() {
   )
 }
 
-export default Quiz
+export default Quiz;

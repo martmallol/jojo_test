@@ -1,9 +1,7 @@
-//let jonathan, joseph, jotaro, josuke, giorno, jolyne;
-//jonathan = joseph = jotaro = josuke = giorno = jolyne = 0;
-import imgOne from '../../img/funeral.jpg';
-import imgTwo from '../../img/baseball.jpeg';
-import imgThree from '../../img/caprese.png';
-import imgFour from '../../img/poker.jpg'
+import imgOne from '../img/funeral.jpg';
+import imgTwo from '../img/baseball.jpeg';
+import imgThree from '../img/caprese.png';
+import imgFour from '../img/poker.jpg'
 
 const questions = [
     {
