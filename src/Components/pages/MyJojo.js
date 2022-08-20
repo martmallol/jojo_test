@@ -4,10 +4,7 @@ import jolyneee from '../../img/jolyne.jpg'
 import charactersInfo from '../../characters-info/characters'
 
 function MyJojo({ response }) {
-  /*const yourJojo = () => {
-    let you = 0;
-    return you;
-  }*/
+  const yourJojo = Object.keys(response).reduce((a, b) => response[a] > response[b] ? a : b);
 
   return (
     <main className='MyJojo'>
@@ -16,15 +13,14 @@ function MyJojo({ response }) {
       </div>
       <div className='body'>
         <div className='picture'>
-          <img src={jolyneee} />
+          <img src={charactersInfo[yourJojo].image} />
+          <a href={`https://jojo.fandom.com/wiki/${charactersInfo[yourJojo].name}_${charactersInfo[yourJojo].surname}`} >More info</a>
         </div>
         <div className='character-info'>
           <div className='hola'>
             <div className='description'>
-              <h2>Jolyne</h2>
-              <p>You are protective, yet a harsh person. You would take any risks to save your friends, 
-              you trust them completely. For that reason you may tend to be naive sometimes. 
-              However, this attitude could bring you many dangerous situations.</p>
+              <h2>{charactersInfo[yourJojo].name}</h2>
+              <p>{charactersInfo[yourJojo].description}</p>
             </div>
                       
             <div className='submit'>
@@ -42,9 +38,7 @@ function MyJojo({ response }) {
             </div>
           </div>
         </div>
-
       </div>
-
     </main>
   )
 }
