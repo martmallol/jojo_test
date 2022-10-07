@@ -2,9 +2,25 @@ import React from 'react'
 import './MyJojo.css'
 import jolyneee from '../../img/jolyne.jpg'
 import charactersInfo from '../../characters-info/characters'
-
 function MyJojo({ response }) {
   const yourJojo = Object.keys(response).reduce((a, b) => response[a] > response[b] ? a : b);
+
+  const shareObject = {
+    title: `I'm ${charactersInfo[yourJojo].name}_${charactersInfo[yourJojo].surname}!` ,
+    text: 'Do you want to discover which JoJo are you? Check it out!',
+    url: 'https://github.com/martmallol'
+  };
+
+  const shareAcross = () => {
+    if (navigator.share) {
+      navigator
+        .share(shareObject)
+        .then(() => console.log('Successful share'))
+        .catch(error => console.log('Error sharing', error));
+    } else {
+      console.log('Share not supported');
+    }
+  }
 
   return (
     <main className='MyJojo'>
@@ -34,7 +50,7 @@ function MyJojo({ response }) {
 
             <div className='share'>
               <a className='button' onClick={window.location.href} href='./quiz'><span>Play Again</span></a>
-              <a className='button'><span>Share</span></a>
+              <a className='button' onClick={() => shareAcross()}><span>Share</span></a>
             </div>
           </div>
         </div>

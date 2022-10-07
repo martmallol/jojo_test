@@ -10,7 +10,9 @@ const charactersInfo = {
         name: `Jonathan`,
         surname: `Joestar`,
         image: imgJonathan,
-        description: ``
+        description: `You're a kind, honest and positive person. Although you may get across some bad people, you'll never lose faith in humanity.
+        You're super polite and dress (and act) as a gentleman. You rarely lose your posture. 
+        Family is the most important thing in the world for you, and you would do anything to protect your loved ones.`
     },
     joseph: {
         name: `Joseph`,

@@ -19,6 +19,7 @@
     background-color: red;
     padding: 0;
     text-align:left;
+    fade: fade-in;
 }
 
 .MyJojo .title h1 {
@@ -29,6 +30,7 @@
     font-size: 5rem;
     margin: 0;
 }
+
 /* Image */
 .body{
     display: flex;
@@ -40,6 +42,7 @@
 .picture {
     background-color: pink;
     max-width: 450px;
+    min-height: 630px;
     max-height: 700px;
     flex: 50%;
 }
@@ -59,11 +62,6 @@
     flex: 42%;
 }
 
-.description {
-    background-color: violet;
-    padding: 0.5rem;
-}
-
 .hola {
     background-color: wheat;
     padding: 1rem;
@@ -71,6 +69,17 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    max-width: 420px;
+    min-height: 630px;
+    max-height: 700px;
+    flex: auto;
+    border: 1px solid black;
+    border-radius: 1rem;
+}
+
+.description {
+    background-color: violet;
+    padding: 0.5rem;
 }
 
 /* Submit */

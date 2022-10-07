@@ -7,6 +7,7 @@ import Results from './Components/pages/Results';
 import Quiz from './Components/pages/Quiz';
 import MyJojo from './Components/pages/MyJojo';
 import { useState } from 'react';
+import React from 'react'
 
 function App() {
 
