@@ -22,7 +22,7 @@ main {
     position: relative;
     display: flex;
     justify-content: space-between;
-    background-color: green;
+    /* background-color: green; */
 }
 
 .progress-step {
@@ -50,7 +50,7 @@ main {
 }
 
 .question-title {
-    background-color: aqua;
+    /* background-color: aqua; */
     width: 480px;
 }
 
@@ -63,7 +63,7 @@ main {
     height: 320px;
     perspective: 2500px;
     display: flex;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
   }
 
 .card-inner {
@@ -82,7 +82,7 @@ main {
 
 .box {
     max-width: 500px;
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 
 .card .face {
