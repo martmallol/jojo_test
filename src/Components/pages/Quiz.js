@@ -129,7 +129,9 @@ const [myCharacters, setCharacters] = useState({
 
   const myCard = document.querySelector(".card-inner");
   const cardFunction = () => {
-    myCard.classList.toggle("is-flipped");
+    if(myCard) {
+      myCard.classList.toggle("is-flipped");
+    }
   }
 
   // Interface 
