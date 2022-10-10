@@ -8,7 +8,7 @@ a:link, a:visited, a:active {
     display: flex;
     align-items: center;
     top: 0;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
     position: relative;
     font-size: 1.3rem;
     font-weight: 550;  
@@ -37,7 +37,7 @@ a:link, a:visited, a:active {
 }
 
 a:hover {
-    color: #3a10e5;
+    color: rgb(250, 119, 255) /*#3a10e5*/;
 	transition: all .3s;
 }
 

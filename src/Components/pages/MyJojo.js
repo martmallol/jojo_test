@@ -34,6 +34,7 @@ function MyJojo({ response }) {
         </div>
         <div className='character-info'>
           <div className='hola'>
+          <div className='card-box'>
             <div className='description'>
               <h2>{charactersInfo[yourJojo].name}</h2>
               <p>{charactersInfo[yourJojo].description}</p>
@@ -44,14 +45,15 @@ function MyJojo({ response }) {
               <div className='form'>
                 <span>Your name:</span> 
                 <input></input>
-                <a className='button'><span>Load</span></a>
+                <a className='button1' ><span>Load</span></a>
               </div>
             </div>
 
             <div className='share'>
-              <a className='button' onClick={window.location.href} href='./quiz'><span>Play Again</span></a>
-              <a className='button' onClick={() => shareAcross()}><span>Share</span></a>
+              <a className='button1' onClick={window.location.href} href='./quiz'><span>Play Again</span></a>
+              <a className='button1' onClick={() => shareAcross()}><span>Share</span></a>
             </div>
+          </div>
           </div>
         </div>
       </div>

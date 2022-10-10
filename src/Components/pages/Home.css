@@ -2,19 +2,21 @@
     position: absolute;
     left: 0;
     right: 0;
-    margin: 1.5rem auto;
+    margin: 0.5rem auto;
     text-align: center;
     width: auto;
     max-width: max-content;
+    padding: 1rem;
 }
 
 .banner img {
     border-radius: 1rem;
     max-width:100%;
+    border: 1px solid black;
 }
 
 .banner h1 {
-    padding: 1rem 1rem;
+    padding: 1rem;
     color: black;
     background-color: rgba(245, 245, 245, 0.842);
     border-radius: 0.5rem;
@@ -22,7 +24,7 @@
 }
 
 .title  {
-    padding: 1rem 1rem;
+    padding: 0.5rem 2rem;
     margin-top: -7rem;
     position: relative;
     display: block;
@@ -31,18 +33,27 @@
 }
 
 .game-explanation {
+    padding: 0 1rem;
     margin-top: 1rem ;
     margin-bottom: 2rem;
     max-width: 900px;
+    font-size: 1.3rem;
+    /*background-color: antiquewhite;*/
+}
+
+strong {
+    font-weight:500;
 }
 
 .button {
-    color: #ffffff !important;
-    font-weight: bold;
+    color: black/*#ffffff*/ !important;
+    font-weight:400;
     padding: 10px;
-    background-color: #3a10e5;
-    border: 0.1rem solid #3a10e5;
+    background-color: rgb(250, 119, 255); /*#3a10e5;*/
+    border: 0.1rem solid rgb(250, 119, 255);/*#3a10e5;*/
     border-radius: 0.3rem;
+    font-size: 1.25rem;
+    border: 1px solid black;
 }
 
 .button:hover {

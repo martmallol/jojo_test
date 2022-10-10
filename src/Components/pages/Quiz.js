@@ -135,7 +135,8 @@ const [myCharacters, setCharacters] = useState({
   // Interface 
 
   return (
-    <main className='Quiz'>
+    <main >
+      <body className='Quiz'>
       <div className='progress-bar' id='progress-bar'>
         {labelArray.map((elem) => (
           <div className={elem}></div>))}
@@ -174,6 +175,7 @@ const [myCharacters, setCharacters] = useState({
         </div>
       </div>
       {error ? <div className='error'><label>You have to choose an option!</label></div> : ''}
+    </body>
     </main>
   )
 }

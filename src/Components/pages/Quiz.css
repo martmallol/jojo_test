@@ -1,3 +1,7 @@
+main {
+    padding: 0 0.3rem;
+}
+
 .Quiz {
     border-radius: 10px;
     background-color: rgb(255, 200, 214);
@@ -18,7 +22,7 @@
     position: relative;
     display: flex;
     justify-content: space-between;
-    
+    background-color: green;
 }
 
 .progress-step {
@@ -41,20 +45,25 @@
 
 /* Title */
 .question-number {
-    margin-top: 0.5rem;
+    margin-top: 0.4rem;
     font-size: 1.25rem;
 }
 
+.question-title {
+    background-color: aqua;
+    width: 480px;
+}
 
 
 /* Card */
 .card {
-    margin: auto 0.5rem;
+    margin: auto;
     margin-bottom: 1rem;
-    width: 550px;
-    height: 300px;
+    width: 475px;
+    height: 320px;
     perspective: 2500px;
     display: flex;
+    background-color: #ffffff;
   }
 
 .card-inner {
@@ -69,6 +78,11 @@
 
 .card-inner.is-flipped {
 	transform: rotateY(180deg);
+}
+
+.box {
+    max-width: 500px;
+    background-color: aqua;
 }
 
 .card .face {
@@ -115,13 +129,14 @@
 /* Buttons */
  button {
     text-decoration: none;
-    padding: 20px 50px;
-    font-size: 1.25rem;
+    
+    font-size: 1.1rem;
     line-height: 0.5rem;
     position: relative;
     width: auto;
+    max-width: 500px;
     height: 50px;
-    margin: 5px;
+    margin: 5px 0px;
     border-radius: 5px;
     background: white;
     border: 1px solid black;
@@ -177,6 +192,7 @@ button:hover::before {
 
 .back-next button {
     background-color: rgb(250, 119, 255);
+    padding: 20px 50px;
 }
 
 .back-next {
