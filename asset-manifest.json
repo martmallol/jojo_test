@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/jojos-quiz-game/static/css/main.a81a4906.css",
-    "main.js": "/jojos-quiz-game/static/js/main.e7d45367.js",
+    "main.js": "/jojos-quiz-game/static/js/main.6bc318b6.js",
     "static/js/787.8062fa08.chunk.js": "/jojos-quiz-game/static/js/787.8062fa08.chunk.js",
     "static/media/jotaro.jpg": "/jojos-quiz-game/static/media/jotaro.d3f2fbd10157fa502618.jpg",
     "static/media/poker.jpg": "/jojos-quiz-game/static/media/poker.e7b778bf5903f8e5db78.jpg",
@@ -18,11 +18,11 @@
     "static/media/logo.svg": "/jojos-quiz-game/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/jojos-quiz-game/index.html",
     "main.a81a4906.css.map": "/jojos-quiz-game/static/css/main.a81a4906.css.map",
-    "main.e7d45367.js.map": "/jojos-quiz-game/static/js/main.e7d45367.js.map",
+    "main.6bc318b6.js.map": "/jojos-quiz-game/static/js/main.6bc318b6.js.map",
     "787.8062fa08.chunk.js.map": "/jojos-quiz-game/static/js/787.8062fa08.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a81a4906.css",
-    "static/js/main.e7d45367.js"
+    "static/js/main.6bc318b6.js"
   ]
 }
