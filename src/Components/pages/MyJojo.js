@@ -1,7 +1,9 @@
-import React from 'react'
-import './MyJojo.css'
-import jolyneee from '../../img/jolyne.jpg'
-import charactersInfo from '../../characters-info/characters'
+import React from 'react';
+import './MyJojo.css';
+import jolyneee from '../../img/jolyne.jpg';
+import charactersInfo from '../../characters-info/characters';
+import { Link } from 'react-router-dom';
+
 function MyJojo({ response }) {
   const yourJojo = Object.keys(response).reduce((a, b) => response[a] > response[b] ? a : b);
 
