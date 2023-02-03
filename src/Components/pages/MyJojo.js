@@ -50,7 +50,7 @@ function MyJojo({ response }) {
             </div>
 
             <div className='share'>
-              <a className='button1' onClick={window.location.href} href='./quiz'><span>Play Again</span></a>
+            <Link to='/quiz' className='button1' onClick={window.location.href}><span>Play Again</span></Link>
               <a className='button1' onClick={() => shareAcross()}><span>Share</span></a>
             </div>
           </div>
