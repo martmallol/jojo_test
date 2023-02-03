@@ -17,6 +17,11 @@ function Navbar() {
           </Link>
         </li>
         <li className='navbar-item'>
+          <Link to="/quiz" className='navbar-link'>
+            <a>Quiz</a>
+          </Link>
+        </li>
+        <li className='navbar-item'>
           <Link to="/results" className='navbar-link'>
             <a>Results</a>
           </Link>

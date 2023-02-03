@@ -1,6 +1,7 @@
 import React from 'react'
 import banner from '../../img/jojos.jpg'
 import './Home.css'
+import { Link } from 'react-router-dom';
 
 function Home() {
   return (
@@ -16,7 +17,7 @@ function Home() {
           Doesn't that make you curious?</em></p>
         <p><strong>Start this test and find it out!</strong></p>
       </div>
-      <a className='button' href='/quiz'><span>Play now!</span></a>
+      <Link to='/quiz' className='button'><span>Play now!</span></Link>
     </section>
   )
 }
