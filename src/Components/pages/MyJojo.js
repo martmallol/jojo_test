@@ -8,9 +8,9 @@ function MyJojo({ response }) {
   const yourJojo = Object.keys(response).reduce((a, b) => response[a] > response[b] ? a : b);
 
   const shareObject = {
-    title: `I'm ${charactersInfo[yourJojo].name}_${charactersInfo[yourJojo].surname}!` ,
+    title: `I'm ${charactersInfo[yourJojo].name} ${charactersInfo[yourJojo].surname}!` ,
     text: 'Do you want to discover which JoJo are you? Check it out!',
-    url: 'https://github.com/martmallol'
+    url: 'https://martmallol.github.io/jojos-quiz-game'
   };
 
   const shareAcross = () => {
@@ -52,7 +52,7 @@ function MyJojo({ response }) {
             </div>
 
             <div className='share'>
-            <Link to='/quiz' className='button1' onClick={window.location.href}><span>Play Again</span></Link>
+            <Link to='/quiz' className='button1'><span>Play Again</span></Link>
               <a className='button1' onClick={() => shareAcross()}><span>Share</span></a>
             </div>
           </div>
