@@ -1,6 +1,5 @@
 import React from 'react';
 import './MyJojo.css';
-import jolyneee from '../../img/jolyne.jpg';
 import charactersInfo from '../../characters-info/characters';
 import { Link } from 'react-router-dom';
 
@@ -46,7 +45,7 @@ function MyJojo({ response }) {
               <h3>Upload your result!</h3>
               <div className='form'>
                 <span>Your name:</span> 
-                <input></input>
+                <input id="txtbox"></input>
                 <a className='button1' ><span>Load</span></a>
               </div>
             </div>

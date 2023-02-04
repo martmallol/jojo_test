@@ -1,5 +1,5 @@
 .banner {
-    position: absolute;
+    position: relative;
     left: 0;
     right: 0;
     margin: 0.5rem auto;
@@ -28,8 +28,6 @@
     margin-top: -7rem;
     position: relative;
     display: block;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
 
 .game-explanation {
@@ -61,3 +59,29 @@ strong {
     transition: opacity 0.15s;
     cursor: pointer;
 }
+
+@media screen and (max-width: 480px) {
+    h1 {
+      font-size: 18px;
+    }
+    .banner {
+        min-height: 100vh;
+    }
+
+  }
+
+   @media screen and (max-width: 375px) {
+    p, span {
+        font-size: 18px;
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    h1 {
+      font-size: 14px;
+    }
+
+    p, span {
+        font-size: 13px;
+    }
+  }
