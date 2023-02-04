@@ -7,8 +7,9 @@ function MyJojo({ response }) {
   const yourJojo = Object.keys(response).reduce((a, b) => response[a] > response[b] ? a : b);
 
   const shareObject = {
-    title: `I'm ${charactersInfo[yourJojo].name} ${charactersInfo[yourJojo].surname}!` ,
-    text: 'Do you want to discover which JoJo are you? Check it out!',
+    title: `${charactersInfo[yourJojo].name} ${charactersInfo[yourJojo].surname}!` ,
+    text: `I'm ${charactersInfo[yourJojo].name} ${charactersInfo[yourJojo].surname}!. 
+    Do you want to discover which JoJo are you? Check it out!`,
     url: 'https://martmallol.github.io/jojos-quiz-game'
   };
 
