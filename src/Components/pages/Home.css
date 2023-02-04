@@ -62,7 +62,7 @@ strong {
 
 @media screen and (max-width: 480px) {
     h1 {
-      font-size: 2rem;
+      font-size: 1.1rem;
     }
     .banner {
         min-height: 100vh;
@@ -78,7 +78,7 @@ strong {
 
 @media screen and (max-width: 350px) {
     h1 {
-        font-size: 1.2rem;
+        font-size: 1rem;
       }
 
     p, span {

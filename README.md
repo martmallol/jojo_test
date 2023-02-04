@@ -1,4 +1,26 @@
-# Getting Started with Create React App
+# Jojo's Quiz Game
+![Page Example](/src/img/page-sample.png)
+Which JoJo Character Are You? Guess which hero fits your personality. You can try it with your friends and compare their results with yours!
+
+## Overview
+### Users should be able to:
+- Answer all questions and get their proper character.
+- Play again, or go back to a previous question if they'd like to.
+- Share their results with their friends.
+- Flip every card available. If they do it, they'll get the timestamp and the episode where that scene occurs.
+
+### Built with
+- React JS
+- Flexbox
+- CSS
+
+### What I learnt
+- Create a functional React App. 
+- Be able to store data (such as the user's answers) for a final purpose: returning the character that best fits the answers that were chosen.
+- Integrate an API (Web Share API)
+- Create a desktop and a mobile page design for the app. 
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

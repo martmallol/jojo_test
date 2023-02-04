@@ -1,7 +1,7 @@
 {
   "name": "jojos-quiz-game",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "homepage": "https://martmallol.github.io/jojos-quiz-game",
   "dependencies": {
     "@hookform/error-message": "^2.0.1",
@@ -40,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
