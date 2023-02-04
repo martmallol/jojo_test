@@ -62,26 +62,26 @@ strong {
 
 @media screen and (max-width: 480px) {
     h1 {
-      font-size: 18px;
+      font-size: 2rem;
     }
     .banner {
         min-height: 100vh;
+        margin: 0 auto;
     }
+}
 
-  }
-
-   @media screen and (max-width: 375px) {
+@media screen and (max-width: 375px) {
     p, span {
         font-size: 18px;
     }
-  }
+}
 
-  @media screen and (max-width: 350px) {
+@media screen and (max-width: 350px) {
     h1 {
-      font-size: 14px;
-    }
+        font-size: 1.2rem;
+      }
 
     p, span {
         font-size: 13px;
     }
-  }
+}

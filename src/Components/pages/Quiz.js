@@ -145,7 +145,7 @@ const [myCharacters, setCharacters] = useState({
       </div>
       
       <div className='question-number'>
-        <span> Question {actualQuestion + 1} of</span> {questions.length}
+        <span> Question {actualQuestion + 1} of {questions.length}</span>
       </div>
       
       <div className='question-title'>
