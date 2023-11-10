@@ -29,7 +29,6 @@
 .MyJojo h2 {
     font-size: 5rem;
     margin: 0;
-    /* opacity: 0; */
 }
 
 /* Image */
@@ -50,7 +49,6 @@
     vertical-align: top;
     float: none;
     padding: 0 1rem;
-    /* opacity: 0; */
 }
 
 .picture img {
@@ -63,103 +61,6 @@
 
 .picture a {
     margin-bottom: 1rem;
-}
-
-/* Character description */
-.character-info {
-    /* background-color: orange; */
-    justify-content: center;
-    flex: 32%;
-}
-
-.hola {
-    background-color: rgb(255, 200, 214);
-    padding: 1rem;
-    position: relative;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 355px;
-    max-width: 420px;
-    min-height: 630px;
-    max-height: 700px;
-    border: 1px solid black;
-    border-radius: 1rem;
-}
-
-/*.card-box {
-    background: yellow;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    background-color: yellow;
-}*/
-
-.description {
-    /* background-color: violet; */
-    padding: 1rem;
-}
-
-.form {
-    /* background-color: tomato; */
-}
-
-/* Submit */
-.submit {
-    /* background-color: green; */
-    padding: 0.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid black;
-
-}
-
-input {
-    width: 40%;
-    font-size: 1.2rem;
-    padding: 0.4rem;
-    margin-left: 0.5rem;
-    margin-right: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 0.2rem;
-}
-
-/* Play again button */
-
-/* Share result */
-.share {
-    /* background-color: brown; */
-    padding: 1.5rem;
-    justify-content: center;
-    text-align: center;
-    display: flex;
-}
-
-.share a {
-    width: auto;
-    margin: 0 1rem;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-}
-
-.button1 {
-    background-color: white /*#3a10e5;*/;
-    color: black/*#ffffff*/ !important;
-    font-weight:400;
-    padding: 10px;
-    border: 0.1rem solid rgb(250, 119, 255);/*#3a10e5;*/
-    border-radius: 0.3rem;
-    font-size: 1.25rem;
-    border: 1px solid black;
-}
-
-.button1:hover{
-    transition: all .3s;
-    background-color: rgb(255, 240, 190);
-    cursor: pointer;
 }
 
 @media screen and (max-width: 400px) {
