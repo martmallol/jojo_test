@@ -1,8 +1,8 @@
 import React from 'react';
 import './MyJojo.css';
-import useMyJojo from '../../hooks/useMyJojo'
-import charactersInfo from '../../characters-info/characters';
-import CharacterInfoCard from '../CharacterInfo/CharacterInfoCard';
+import useMyJojo from '../../../hooks/useMyJojo.js'
+import {charactersInfo} from '../../../utils/characters.js';
+import CharacterInfoCard from '../../CharacterInfoCard/CharacterInfoCard.js';
 
 function MyJojo({ response }) {
   const { yourJojo, shareAcross } = useMyJojo(response);

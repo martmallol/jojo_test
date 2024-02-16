@@ -2,10 +2,10 @@ import logo from './logo.svg';
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
 import { HashRouter, BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './Components/pages/Home'
-import Results from './Components/pages/Results';
-import Quiz from './Components/pages/Quiz';
-import MyJojo from './Components/pages/MyJojo';
+import Home from './Components/pages/Home/Home'
+import Results from './Components/pages/Results/Results';
+import Quiz from './Components/pages/Quiz/Quiz';
+import MyJojo from './Components/pages/MyJojo/MyJojo';
 import { useState } from 'react';
 import React from 'react'
 
