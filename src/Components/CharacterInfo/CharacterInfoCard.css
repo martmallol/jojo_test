@@ -1,6 +1,6 @@
 .character-info {
   justify-content: center;
-  flex: 32%;
+  flex: 1;
 }
 
 .hola {
@@ -78,4 +78,48 @@ input {
   transition: all .3s;
   background-color: rgb(255, 240, 190);
   cursor: pointer;
+}
+
+@media screen and (max-width: 400px) {
+  .character-info {
+      margin: 0 1rem;
+  }
+  .hola {
+      min-width: 50%;
+      min-height: 100vh;
+  }
+  .picture {
+      min-height: 100vh;
+  }
+  span {
+      font-size: 14px;
+  }
+  .button1 {
+      height: 15px;
+
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .MyJojo h2 {
+      font-size: 2rem;
+  }
+  .MyJojo h3 {
+      font-size: 1rem;
+  }
+
+  .hola {
+      min-height: 60vh;
+  }
+  .character-info {
+      min-width: 30%;
+  }
+  span {
+      font-size: 10px;
+
+  }
+  #txtbox {
+      font-size:14px;
+      width: 50px
+  }
 }

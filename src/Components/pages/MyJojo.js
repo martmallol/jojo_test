@@ -1,7 +1,7 @@
 import React from 'react';
 import './MyJojo.css';
 import useMyJojo from '../../hooks/useMyJojo'
-import charactersInfo from '../../characters-info/characters';
+import charactersInfo from '../../data/characters';
 import CharacterInfoCard from '../CharacterInfo/CharacterInfoCard';
 
 function MyJojo({ response }) {
@@ -14,15 +14,14 @@ function MyJojo({ response }) {
       </div>
       <div className='body'>
         <div className='picture'>
-          <img src={charactersInfo[yourJojo].image} />
-          <a href={`https://jojo.fandom.com/wiki/${charactersInfo[yourJojo].name}_${charactersInfo[yourJojo].surname}`}> More info</a>
+          <img src={charactersInfo[yourJojo].image} alt='My Jojo'/>
+          <a href={`https://jojo.fandom.com/wiki/${charactersInfo[yourJojo].name}_${charactersInfo[yourJojo].surname}`} >More info</a>
         </div>
         <CharacterInfoCard 
-          chosenJojo={charactersInfo[yourJojo]}
-          shareAcross={shareAcross} />
+          chosenJojo={yourJojo}
+          shareAcross={shareAcross}/>
       </div>
     </main>
   )
 }
-
 export default MyJojo
