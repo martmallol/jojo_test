@@ -1,6 +1,5 @@
 import "./CharacterInfoCard.css";
 import { Link } from "react-router-dom";
-import charactersInfo from "../../src/utils/characters.js";
 
 function CharacterInfoCard({ chosenJojo, shareAcross }) {
 	return (
