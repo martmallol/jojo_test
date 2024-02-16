@@ -1,0 +1,14 @@
+.box {
+  max-width: 500px;
+}
+
+/* Back Next buttons */
+.back-next button {
+  background-color: rgb(250, 119, 255);
+  padding: 20px 50px;
+}
+
+.back-next {
+  margin-top: 0.5rem;
+  /*background-color: brown;*/
+}
