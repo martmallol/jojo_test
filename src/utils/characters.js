@@ -5,7 +5,7 @@ import imgJosuke from '../img/josuke.jpg';
 import imgGiorno from '../img/giorno.jpg';
 import imgJolyne from '../img/jolyne.jpg';
 
-const charactersInfo = {
+export const charactersInfo = {
     jonathan: {
         name: `Jonathan`,
         surname: `Joestar`,
@@ -57,5 +57,3 @@ const charactersInfo = {
         This attitude could bring you many dangerous situations.`
     }
 };
-
-export default charactersInfo;
