@@ -1,7 +1,7 @@
-import { charactersInfo } from '../utils/characters';
+import charactersInfo from '../data/characters';
 
 const useMyJojo = (chosenCharacter) => {
-  const yourJojo = Object.keys(chosenCharacter).reduce((a, b) => 
+  const yourJojo = Object.keys(chosenCharacter).reduce((a, b) =>
     chosenCharacter[a] > chosenCharacter[b] ? a : b
   );
 
@@ -25,7 +25,7 @@ const useMyJojo = (chosenCharacter) => {
   return {
     yourJojo,
     shareAcross
-  }
+  };
 };
 
 export default useMyJojo;

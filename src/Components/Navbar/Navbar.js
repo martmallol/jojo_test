@@ -1,14 +1,13 @@
 import { Link } from 'react-router-dom';
-import logo from '../../img/jojo-logo.jpg'
+import logo from '../../img/jojo-logo.jpg';
 import './Navbar.css';
-import React from 'react'
+import React from 'react';
 
-
-function Navbar() {
+const Navbar = () => {
   return (
     <nav className='navbar'>
-      <Link to='/' className='navbar-logo'> 
-        <img src={logo} class="navbar-logo" height={40}/> 
+      <Link to='/' className='navbar-logo'>
+        <img src={logo} className="navbar-logo" height={40}/>
       </Link>
       <ul className='navbar-menu'>
         <li className='navbar-item'>
@@ -28,8 +27,7 @@ function Navbar() {
         </li>
       </ul>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
-
+export default Navbar;

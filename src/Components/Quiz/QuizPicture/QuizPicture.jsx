@@ -1,16 +1,18 @@
-import "./QuizPicture.css";
-import questions from '../../../utils/questions';
+import './QuizPicture.css';
+import questions from '../../../data/questions';
+import React from 'react';
 
+// eslint-disable-next-line react/prop-types
 const QuizPicture = ({ actualQuestion }) => {
-  const myPicture = document.querySelector(".quizPicture-inner");
-  
-  const togglePicture = () => {
-    if(myPicture) {
-      myPicture.classList.toggle("is-flipped");
-    }
-  }
+  const myPicture = document.querySelector('.quizPicture-inner');
 
-	return (
+  const togglePicture = () => {
+    if (myPicture) {
+      myPicture.classList.toggle('is-flipped');
+    }
+  };
+
+  return (
     <div className='quizPicture' onClick={togglePicture}>
       <div id='hi' className='quizPicture-inner'>
         <div className='face front'>
@@ -24,7 +26,7 @@ const QuizPicture = ({ actualQuestion }) => {
         </div>
       </div>
     </div>
-	);   
-}
+  );
+};
 
 export default QuizPicture;

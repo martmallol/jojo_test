@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
-import { HashRouter, BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './Components/pages/Home/Home'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './Components/pages/Home/Home';
 import Results from './Components/pages/Results/Results';
 import Quiz from './Components/pages/Quiz/Quiz';
 import MyJojo from './Components/pages/MyJojo/MyJojo';
-import { useState } from 'react';
-import React from 'react'
+import { React, useState } from 'react';
 
-function App() {
-
+const App = () => {
   const [response, setResponse] = useState({
-    jonathan: 0, 
+    jonathan: 0,
     joseph: 0,
     jotaro: 0,
     josuke: 0,
     giorno: 0,
-    jolyne: 0});
+    jolyne: 0
+  });
 
   return (
     <div className="App">
@@ -30,8 +28,8 @@ function App() {
           <Route path='/get-my-jojo' element={ <MyJojo response={response}/> }></Route>
         </Routes>
       </Router>
-    </div>  
+    </div>
   );
-}
+};
 
 export default App;
