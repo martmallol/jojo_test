@@ -4,9 +4,8 @@ import React from 'react';
 
 // eslint-disable-next-line react/prop-types
 const QuizPicture = ({ actualQuestion }) => {
-  const myPicture = document.querySelector('.quizPicture-inner');
-
   const togglePicture = () => {
+    const myPicture = document.querySelector('.quizPicture-inner');
     if (myPicture) {
       myPicture.classList.toggle('is-flipped');
     }
