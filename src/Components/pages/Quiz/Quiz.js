@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import { useNavigate } from 'react-router-dom';
 import questions from '../../../utils/questions';
 import './Quiz.css'
 import QuizBox from '../../Quiz/QuizBox/QuizBox';

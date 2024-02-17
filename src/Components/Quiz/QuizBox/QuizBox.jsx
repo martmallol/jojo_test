@@ -11,7 +11,7 @@ const QuizBox = ({
   setError,
   setResponse
 }) => {
-  const [myCharacters, setCharacters] = useState({
+  const [myCharacters, setMyCharacters] = useState({
     jonathan: 0, 
     joseph: 0,
     jotaro: 0,
@@ -24,24 +24,29 @@ const QuizBox = ({
   
   const updateCharactersValues = (elem) => {
     const answer = questions[actualQuestion].options[elem];
-    // Por que no me cambia los valores?????
-    Object.keys(myCharacters).forEach(key => {
-        myCharacters[key] += answer[key];
-    });
+    const updatedCharacters = Object.keys(myCharacters).reduce((acc, key) => {
+      acc[key] = myCharacters[key] + answer[key];
+      return acc;
+    }, {});
+
+      setMyCharacters(updatedCharacters);
   };
 
   const restartCharactersValues = (elem) => {
     if(elem != -1) {
       const answer = questions[actualQuestion-1].options[elem];
-      Object.keys(myCharacters).forEach(key => {
-        myCharacters[key] -= answer[key];
-      });
+      const updatedCharacters = Object.keys(myCharacters).reduce((acc, key) => {
+        acc[key] = myCharacters[key] - answer[key];
+        return acc;
+      }, {});
+
+      setMyCharacters(updatedCharacters);
     }
   };
 
   const progressSteps = [... document.querySelectorAll(".progress-step")];
     
-  const myPicture = document.querySelector(".picture-inner");
+  const myPicture = document.querySelector(".quizPicture-inner");
   // Handler for choosing an option and clicking next page
   const handleNextPage = () => {
     if(actualAnswer != -1) {
@@ -50,7 +55,7 @@ const QuizBox = ({
         myPicture.classList.remove("is-flipped");
         updateCharactersValues(actualAnswer);
         setPreviousAnswer(actualAnswer);
-        answersHistory.push(actualAnswer);
+        setAnswersHistory([...answersHistory, actualAnswer]);
         setActualAnswer(-1);
         setActualQuestion(actualQuestion+1);
         setError(false);
@@ -68,7 +73,7 @@ const QuizBox = ({
     myPicture.classList.remove("is-flipped");
     setActualQuestion(actualQuestion-1);
     setActualAnswer(-1)
-    answersHistory.pop();
+    setAnswersHistory(answersHistory.slice(0, -1));
     setError(false);
     if(answersHistory) {
       setPreviousAnswer(answersHistory[answersHistory.length-1]);
