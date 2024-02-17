@@ -12,17 +12,17 @@ const Navbar = () => {
       <ul className='navbar-menu'>
         <li className='navbar-item'>
           <Link to="/" className='navbar-link'>
-            <a>Home</a>
+            Home
           </Link>
         </li>
         <li className='navbar-item'>
           <Link to="/quiz" className='navbar-link'>
-            <a>Quiz</a>
+            Quiz
           </Link>
         </li>
         <li className='navbar-item'>
           <Link to="/results" className='navbar-link'>
-            <a>Results</a>
+            Results
           </Link>
         </li>
       </ul>
