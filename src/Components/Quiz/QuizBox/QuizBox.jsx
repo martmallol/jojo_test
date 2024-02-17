@@ -20,30 +20,44 @@ const QuizBox = ({
     giorno: 0,
     jolyne: 0
   });
-  const [actualAnswer, setActualAnswer] = useState(-1);
-  const [previousAnswer, setPreviousAnswer] = useState(-1);
+  const [[previousAnswer, actualAnswer], setAnswers] = useState([-1, -1]);
   const [answersHistory, setAnswersHistory] = useState([]);
 
-  const updateCharactersValues = (elem) => {
-    const answer = questions[actualQuestion].options[elem];
-    const updatedCharacters = Object.keys(myCharacters).reduce((acc, key) => {
-      acc[key] = myCharacters[key] + answer[key];
-      return acc;
-    }, {});
-
-    setMyCharacters(updatedCharacters);
+  const setPreviousAnswer = (newPrevious) => {
+    const newAnswers = [newPrevious, actualAnswer];
+    setAnswers(newAnswers);
   };
 
-  const restartCharactersValues = (elem) => {
-    if (elem !== -1) {
-      const answer = questions[actualQuestion - 1].options[elem];
+  const setActualAnswer = (newActual) => {
+    const newAnswers = [previousAnswer, newActual];
+    setAnswers(newAnswers);
+    console.log(newActual);
+  };
+
+  const updateCharacterValues = (elem, type) => {
+    const canUpdate = type === 'add' || elem !== -1;
+    if (canUpdate) {
+      const questionIdx = type === 'add'
+        ? actualQuestion
+        : actualQuestion - 1;
+      const answer = questions[questionIdx].options[elem];
       const updatedCharacters = Object.keys(myCharacters).reduce((acc, key) => {
-        acc[key] = myCharacters[key] - answer[key];
+        acc[key] = type === 'add'
+          ? myCharacters[key] + answer[key]
+          : myCharacters[key] - answer[key];
         return acc;
       }, {});
 
       setMyCharacters(updatedCharacters);
-    }
+    };
+  };
+
+  const addCharactersValues = (elem) => {
+    updateCharacterValues(elem, 'add');
+  };
+
+  const restartCharactersValues = (elem) => {
+    updateCharacterValues(elem, 'restart');
   };
 
   const progressSteps = [...document.querySelectorAll('.progress-step')];
@@ -55,10 +69,9 @@ const QuizBox = ({
       const upcomingBullet = progressSteps[actualQuestion + 1];
       upcomingBullet.classList.add('progress-step-active');
       myPicture.classList.remove('is-flipped');
-      updateCharactersValues(actualAnswer);
-      setPreviousAnswer(actualAnswer);
+      addCharactersValues(actualAnswer, -1);
+      setAnswers([actualAnswer, -1]);
       setAnswersHistory([...answersHistory, actualAnswer]);
-      setActualAnswer(-1);
       setActualQuestion(actualQuestion + 1);
       setError(false);
       console.log(myCharacters);
@@ -90,7 +103,7 @@ const QuizBox = ({
   const handleGameFinish = () => {
     if (actualAnswer !== -1) {
       // ACA TENGO QUE CAMBIAR COSASSSSSSSS
-      updateCharactersValues(actualAnswer);
+      addCharactersValues(actualAnswer);
       setResponse(myCharacters);
       navigation('/get-my-jojo');
     } else {

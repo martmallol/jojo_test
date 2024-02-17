@@ -24,7 +24,7 @@ const Quiz = ({ setResponse }) => {
 
   return (
     <main >
-      <body className='Quiz'>
+      <div className='Quiz'>
         <div className='progress-bar' id='progress-bar'>
           {labelArray.map((elem, idx) => (
             <div key={idx} className={elem}></div>))}
@@ -46,7 +46,7 @@ const Quiz = ({ setResponse }) => {
           setResponse={setResponse} />
 
         {error ? <div className='error'><label>You have to choose an option!</label></div> : ''}
-      </body>
+      </div>
     </main>
   );
 };
