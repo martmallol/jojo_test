@@ -60,14 +60,10 @@ const QuizBox = ({
     updateCharacterValues(elem, 'restart');
   };
 
-  const progressSteps = [...document.querySelectorAll('.progress-step')];
-
   const myPicture = document.querySelector('.quizPicture-inner');
   // Handler for choosing an option and clicking next page
   const handleNextPage = () => {
     if (actualAnswer !== -1) {
-      const upcomingBullet = progressSteps[actualQuestion + 1];
-      upcomingBullet.classList.add('progress-step-active');
       myPicture.classList.remove('is-flipped');
       addCharactersValues(actualAnswer, -1);
       setAnswers([actualAnswer, -1]);
@@ -83,8 +79,6 @@ const QuizBox = ({
 
   // Handler for clicking previous page
   const handlePreviousPage = () => {
-    const previousBullet = progressSteps[actualQuestion];
-    previousBullet.classList.remove('progress-step-active');
     myPicture.classList.remove('is-flipped');
     setActualQuestion(actualQuestion - 1);
     setActualAnswer(-1);

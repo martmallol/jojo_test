@@ -17,32 +17,6 @@ main {
     border: 1px solid black;
 }
 
-/* Progress Bar*/
-.progress-bar {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    /* background-color: green; */
-}
-
-.progress-step {
-    width: 1.5rem;
-    height: 1.5rem;
-    background-color: #ffffff;
-    border-radius: 50%;
-    /* So they're not positioned as a column*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0.2rem 1rem;
-    border: 1px solid black;
-    transition: background-color 0.1s;
-}
-
-.progress-step-active {
-    background: rgb(250, 119, 255);
-}
-
 /* Title */
 .question-number {
     margin-top: 0.4rem;
@@ -50,14 +24,12 @@ main {
 }
 
 .question-title {
-    /* background-color: aqua; */
     width: 80%;
 }
 
 /* Buttons */
  button {
     text-decoration: none;
-    
     font-size: 1.1rem;
     line-height: 0.5rem;
     position: relative;
