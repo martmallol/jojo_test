@@ -10,8 +10,10 @@ const questions = [
     saga: "Jojo's Bizarre Adventure Part II: Battle Tendency",
     show: '"The Man Who Became God": Season 1, Episode 26, Minute 17\' 09\'\'',
     options: [
-      { id: 0, textAnswer: 'Yes', jonathan: 0, joseph: 3, jotaro: 0, josuke: 1, giorno: 0, jolyne: 1 },
-      { id: 1, textAnswer: 'No', jonathan: 3, joseph: 0, jotaro: 1, josuke: 0, giorno: 3, jolyne: 0 }
+      { id: 0, textAnswer: 'Absolutely yes!', jonathan: 0, joseph: 3, jotaro: 0, josuke: 1, giorno: 0, jolyne: 1 },
+      { id: 1, textAnswer: 'What?! Of course not!', jonathan: 3, joseph: 0, jotaro: 1, josuke: 0, giorno: 3, jolyne: 0 },
+      { id: 2, textAnswer: 'Well, if it was my enemy\'s funeral...', jonathan: 0, joseph: 0, jotaro: 1, josuke: 3, giorno: 0, jolyne: 3 },
+      { id: 3, textAnswer: 'I just don\'t know', jonathan: 0, joseph: 0, jotaro: 0, josuke: 1, giorno: 0, jolyne: 1 }
     ]
   },
   {
