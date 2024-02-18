@@ -73,16 +73,6 @@ button:hover::before {
     transform: translate(-3px, 3px);
 }
 
-.mid-game, .final-game {
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.back {
-    margin-right: auto;
-}
-
 /* Label */
 label {
     color: red;
