@@ -5,8 +5,8 @@ import charactersInfo from '../../../data/characters.js';
 import CharacterInfoCard from '../../CharacterInfoCard/CharacterInfoCard.js';
 
 // eslint-disable-next-line react/prop-types
-const MyJojo = ({ response }) => {
-  const { yourJojo, shareAcross } = useMyJojo(response);
+const MyJojo = ({ characterLikeness }) => {
+  const { yourJojo, shareAcross } = useMyJojo(characterLikeness);
 
   return (
     <main className='MyJojo'>
