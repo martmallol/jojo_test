@@ -1,6 +1,6 @@
 import './QuizPicture.css';
 import questions from '../../../data/questions';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 // eslint-disable-next-line react/prop-types
 const QuizPicture = ({ actualQuestion }) => {
@@ -10,6 +10,17 @@ const QuizPicture = ({ actualQuestion }) => {
       myPicture.classList.toggle('is-flipped');
     }
   };
+
+  const untogglePicture = () => {
+    const myPicture = document.querySelector('.quizPicture-inner');
+    if (myPicture) {
+      myPicture.classList.remove('is-flipped');
+    }
+  };
+
+  useEffect(() => {
+    untogglePicture();
+  }, [actualQuestion]);
 
   return (
     <div className='quizPicture' onClick={togglePicture}>

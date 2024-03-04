@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import questions from '../../../data/questions';
 import QuizAnswers from '../QuizAnswers/QuizAnswers';
 import QuizPicture from '../QuizPicture/QuizPicture';
+import QuizButtons from '../QuizButtons/QuizButtons';
 
 const QuizBox = ({
   actualQuestion,
@@ -12,6 +13,7 @@ const QuizBox = ({
   setError,
   setResponse
 }) => {
+  // BIEN
   const [myCharacters, setMyCharacters] = useState({
     jonathan: 0,
     joseph: 0,
@@ -20,27 +22,18 @@ const QuizBox = ({
     giorno: 0,
     jolyne: 0
   });
-  const [[previousAnswer, actualAnswer], setAnswers] = useState([-1, -1]);
+  const [actualAnswer, setActualAnswer] = useState(-1);
   const [answersHistory, setAnswersHistory] = useState([]);
 
-  const setPreviousAnswer = (newPrevious) => {
-    const newAnswers = [newPrevious, actualAnswer];
-    setAnswers(newAnswers);
-  };
-
-  const setActualAnswer = (newActual) => {
-    const newAnswers = [previousAnswer, newActual];
-    setAnswers(newAnswers);
-    console.log(newActual);
-  };
-
-  const updateCharacterValues = (elem, type) => {
-    const canUpdate = type === 'add' || elem !== -1;
+  // BIEN
+  const updateCharacterValues = (answerNumber, type) => {
+    console.log(myCharacters, answerNumber);
+    const canUpdate = type === 'add' || answerNumber !== -1;
     if (canUpdate) {
       const questionIdx = type === 'add'
         ? actualQuestion
         : actualQuestion - 1;
-      const answer = questions[questionIdx].options[elem];
+      const answer = questions[questionIdx].options[answerNumber];
       const updatedCharacters = Object.keys(myCharacters).reduce((acc, key) => {
         acc[key] = type === 'add'
           ? myCharacters[key] + answer[key]
@@ -52,51 +45,58 @@ const QuizBox = ({
     };
   };
 
-  const addCharactersValues = (elem) => {
-    updateCharacterValues(elem, 'add');
+  // BIEN
+  const addCharactersValues = () => {
+    updateCharacterValues(actualAnswer, 'add');
   };
 
-  const restartCharactersValues = (elem) => {
-    updateCharacterValues(elem, 'restart');
+  // BIEN
+  const restartCharactersValues = () => {
+    const answerNumberToDelete = answersHistory[answersHistory.length - 1];
+    updateCharacterValues(answerNumberToDelete, 'restart');
   };
 
-  const myPicture = document.querySelector('.quizPicture-inner');
+  const quizButtonStateUpdate = (characterUpdate, newAnswerHistory, newQuestion) => {
+    if (answersHistory) characterUpdate();
+    setAnswersHistory(newAnswerHistory);
+    setActualQuestion(newQuestion);
+  };
+
+  const nextOrBackStateUpdate = (buttonPressed) => {
+    if (buttonPressed === 'next') {
+      quizButtonStateUpdate(
+        addCharactersValues,
+        [...answersHistory, actualAnswer],
+        actualQuestion + 1);
+    } else {
+      quizButtonStateUpdate(
+        restartCharactersValues,
+        answersHistory.slice(0, -1),
+        actualQuestion - 1);
+    }
+
+    setActualAnswer(-1);
+    setError(false);
+    console.log(myCharacters);
+  };
+
   // Handler for choosing an option and clicking next page
   const handleNextPage = () => {
-    if (actualAnswer !== -1) {
-      myPicture.classList.remove('is-flipped');
-      addCharactersValues(actualAnswer, -1);
-      setAnswers([actualAnswer, -1]);
-      setAnswersHistory([...answersHistory, actualAnswer]);
-      setActualQuestion(actualQuestion + 1);
-      setError(false);
-      console.log(myCharacters);
-    } else {
-      // Error, debes elegir una respuesta!!
-      setError(true);
-    }
+    console.log(actualAnswer);
+    (actualAnswer !== -1)
+      ? nextOrBackStateUpdate('next')
+      : setError(true);
   };
 
   // Handler for clicking previous page
   const handlePreviousPage = () => {
-    myPicture.classList.remove('is-flipped');
-    setActualQuestion(actualQuestion - 1);
-    setActualAnswer(-1);
-    setAnswersHistory(answersHistory.slice(0, -1));
-    setError(false);
-    if (answersHistory) {
-      setPreviousAnswer(answersHistory[answersHistory.length - 1]);
-      restartCharactersValues(previousAnswer);
-    }
-    console.log(myCharacters);
+    nextOrBackStateUpdate('back');
   };
 
-  // const getMyJojo = document.getElementById('get-my-jojo');
-  const navigation = useNavigate();
-  // Handler for game's finishcharacters[key]
+  // Handler for game's finish
   const handleGameFinish = () => {
+    const navigation = useNavigate();
     if (actualAnswer !== -1) {
-      // ACA TENGO QUE CAMBIAR COSASSSSSSSS
       addCharactersValues(actualAnswer);
       setResponse(myCharacters);
       navigation('/get-my-jojo');
@@ -104,27 +104,6 @@ const QuizBox = ({
       // Error, debes elegir una respuesta!!
       setError(true);
     };
-  };
-
-  // What buttons should there be, depending on the question we are currently on
-  const whichButtons = () => {
-    if (actualQuestion === 0) {
-      return (<div><button onClick={handleNextPage}>Next</button></div>);
-    } else if (actualQuestion === (questions.length - 1)) {
-      return (
-        <div className='final-game'>
-          <button className='back' onClick={handlePreviousPage}>Back</button>
-          <button className='get-my-jojo' onClick={handleGameFinish} ><a id='get-my-jojo'>Get my JoJo</a></button>
-        </div>
-      );
-    } else {
-      return (
-        <div className='mid-game'>
-          <button className='back' onClick={handlePreviousPage}>Back</button>
-          <button className='next' onClick={handleNextPage}>Next</button>
-        </div>
-      );
-    }
   };
 
   return (
@@ -135,9 +114,13 @@ const QuizBox = ({
         actualQuestion={actualQuestion}
         setActualAnswer={setActualAnswer} />
 
-      <div className='back-next'>
-        {whichButtons()}
-      </div>
+      <QuizButtons
+        questions={questions}
+        actualQuestion={actualQuestion}
+        handleNextPage={handleNextPage}
+        handlePreviousPage={handlePreviousPage}
+        handleGameFinish={handleGameFinish}
+      />
     </div>
   );
 };
