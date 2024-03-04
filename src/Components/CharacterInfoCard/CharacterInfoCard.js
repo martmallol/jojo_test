@@ -19,6 +19,15 @@ const CharacterInfoCard = ({ chosenJojo, shareAcross }) => {
             <div className='form'>
               <span>Your name:</span>
               <input id="txtbox"></input>
+              <a className='button1' href="#"><span>Load</span></a>
+            </div>
+          </div>
+
+          <div className='submit'>
+            <h3>Upload your result!</h3>
+            <div className='form'>
+              <span>Your name:</span>
+              <input id="txtbox"></input>
               <a className='button1' href=""><span>Load</span></a>
             </div>
           </div>

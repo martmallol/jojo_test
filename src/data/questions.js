@@ -7,7 +7,7 @@ const questions = [
   {
     title: 'Would you make a joke at a funeral?',
     image: imgOne,
-    saga: "Jojo's Bizarre Adventure Part II: Battle Tendency",
+    saga: 'Jojo\'s Bizarre Adventure Part II: Battle Tendency',
     show: '"The Man Who Became God": Season 1, Episode 26, Minute 17\' 09\'\'',
     options: [
       { id: 0, textAnswer: 'Absolutely yes!', jonathan: 0, joseph: 3, jotaro: 0, josuke: 1, giorno: 0, jolyne: 1 },

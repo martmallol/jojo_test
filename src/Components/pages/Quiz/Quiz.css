@@ -1,0 +1,161 @@
+main {
+    padding: 0 0.3rem;
+}
+
+.Quiz {
+    border-radius: 10px;
+    background-color: rgb(255, 200, 214);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem auto;
+    max-width: 650px;
+    max-height: 770px;
+    padding: 30px;
+    position: relative;
+    border: 1px solid black;
+}
+
+/* Title */
+.question-number {
+    margin-top: 0.4rem;
+    font-size: 1.25rem;
+}
+
+.question-title {
+    width: 80%;
+}
+
+/* Buttons */
+ button {
+    text-decoration: none;
+    font-size: 1.1rem;
+    line-height: 0.5rem;
+    position: relative;
+    width: auto;
+    max-width: 500px;
+    height: 50px;
+    margin: 5px 0px;
+    border-radius: 5px;
+    background: white;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+    z-index: 1;
+}
+
+button::before, button::after {
+    content: '';
+    position: absolute;
+
+    border-radius: inherit;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: transform 0.1s ease;
+}
+
+button:hover {
+    transform: translate(1px, -1px);
+    background-color: rgb(255, 240, 190);
+    box-shadow: -3px 3px 0 black;
+    border-radius: 5px;
+}
+
+button:hover::after {
+    transform: translate(-3px, 3px);
+}
+
+button:hover::before {
+    transform: translate(-3px, 3px);
+}
+
+/* Label */
+label {
+    color: red;
+}
+
+.error {
+    margin-top: 1rem;
+}
+
+@media screen and (max-width: 500px) {
+    main {
+        padding: 0;
+    }
+    .Quiz {
+        height: 100vh;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap:wrap;
+        align-content: center; /* this was what I was looking for!!!!*/
+        align-items: center;    
+        margin: 0 auto;
+        padding: 5px;
+    }
+    .quizPicture {
+        min-width: 345px;
+        height: 175px;
+    }
+    .progress-step {
+        margin: 0 1rem;
+    }
+
+    .question-number {
+        margin-top: 0rem;
+    }
+    button {
+        height: 30px;
+    }
+
+    .back-next button {
+        background-color: rgb(250, 119, 255);
+        padding: 10px 25px;
+    }
+
+    .quizPicture .back .content {
+        margin: 0 auto;
+        padding: 0px;
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .quizPicture {
+        min-width: 250px;
+    }
+
+    .progress-step {
+        width: 0.75rem;
+        height: 0.75rem;
+    }
+
+    .question-title {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 320px) and (max-height: 480px) {
+    .Quiz {
+        height: 465px;
+    }
+    
+    .quizPicture {
+        height: 95px;
+    }
+
+    .quizPicture .back .content h3, .quizPicture .back .content p{
+        font-size: 10px;
+    }
+
+    .answers button, .back-next button {
+        font-size: 12px;
+    }
+
+    .error label {
+        font-size: 12px;
+    }
+}

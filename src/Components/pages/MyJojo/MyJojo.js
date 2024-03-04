@@ -1,8 +1,8 @@
 import React from 'react';
 import './MyJojo.css';
-import useMyJojo from '../../hooks/useMyJojo';
-import charactersInfo from '../../data/characters';
-import CharacterInfoCard from '../CharacterInfo/CharacterInfoCard';
+import useMyJojo from '../../../hooks/useMyJojo.js';
+import charactersInfo from '../../../data/characters.js';
+import CharacterInfoCard from '../../CharacterInfoCard/CharacterInfoCard.js';
 
 // eslint-disable-next-line react/prop-types
 const MyJojo = ({ response }) => {
