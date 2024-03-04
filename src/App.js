@@ -8,7 +8,7 @@ import MyJojo from './Components/pages/MyJojo/MyJojo';
 import { React, useState } from 'react';
 
 const App = () => {
-  const [response, setResponse] = useState({
+  const [characterLikeness, setCharacterLikeness] = useState({
     jonathan: 0,
     joseph: 0,
     jotaro: 0,
@@ -24,8 +24,8 @@ const App = () => {
         <Routes>
           <Route path='/' exact element={ <Home /> } />
           <Route path='/results' element={ <Results /> } />
-          <Route path='/quiz' element={ <Quiz setResponse={setResponse}/> } />
-          <Route path='/get-my-jojo' element={ <MyJojo response={response}/> }></Route>
+          <Route path='/quiz' element={ <Quiz characterLikeness={characterLikeness} setCharacterLikeness={setCharacterLikeness}/> } />
+          <Route path='/get-my-jojo' element={ <MyJojo characterLikeness={characterLikeness}/> }></Route>
         </Routes>
       </Router>
     </div>

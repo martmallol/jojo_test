@@ -5,7 +5,7 @@ import QuizBox from '../../Quiz/QuizBox/QuizBox';
 import QuizProgressBar from '../../Quiz/QuizProgressBar/QuizProgressBar';
 
 // eslint-disable-next-line react/prop-types
-const Quiz = ({ setResponse }) => {
+const Quiz = ({ characterLikeness, setCharacterLikeness }) => {
   const [actualQuestion, setActualQuestion] = useState(0);
   const [error, setError] = useState(false);
 
@@ -31,7 +31,8 @@ const Quiz = ({ setResponse }) => {
           actualQuestion={actualQuestion}
           setActualQuestion={setActualQuestion}
           setError={setError}
-          setResponse={setResponse} />
+          characterLikeness={characterLikeness}
+          setCharacterLikeness={setCharacterLikeness} />
 
         {error &&
           <div className='error'>

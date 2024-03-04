@@ -11,37 +11,30 @@ const QuizBox = ({
   actualQuestion,
   setActualQuestion,
   setError,
-  setResponse
+  characterLikeness,
+  setCharacterLikeness
 }) => {
   // BIEN
-  const [myCharacters, setMyCharacters] = useState({
-    jonathan: 0,
-    joseph: 0,
-    jotaro: 0,
-    josuke: 0,
-    giorno: 0,
-    jolyne: 0
-  });
   const [actualAnswer, setActualAnswer] = useState(-1);
   const [answersHistory, setAnswersHistory] = useState([]);
 
   // BIEN
   const updateCharacterValues = (answerNumber, type) => {
-    console.log(myCharacters, answerNumber);
+    console.log(characterLikeness, answerNumber);
     const canUpdate = type === 'add' || answerNumber !== -1;
     if (canUpdate) {
       const questionIdx = type === 'add'
         ? actualQuestion
         : actualQuestion - 1;
       const answer = questions[questionIdx].options[answerNumber];
-      const updatedCharacters = Object.keys(myCharacters).reduce((acc, key) => {
+      const updatedCharacters = Object.keys(characterLikeness).reduce((acc, key) => {
         acc[key] = type === 'add'
-          ? myCharacters[key] + answer[key]
-          : myCharacters[key] - answer[key];
+          ? characterLikeness[key] + answer[key]
+          : characterLikeness[key] - answer[key];
         return acc;
       }, {});
 
-      setMyCharacters(updatedCharacters);
+      setCharacterLikeness(updatedCharacters);
     };
   };
 
@@ -77,7 +70,7 @@ const QuizBox = ({
 
     setActualAnswer(-1);
     setError(false);
-    console.log(myCharacters);
+    console.log(characterLikeness);
   };
 
   // Handler for choosing an option and clicking next page
@@ -98,10 +91,8 @@ const QuizBox = ({
     const navigation = useNavigate();
     if (actualAnswer !== -1) {
       addCharactersValues(actualAnswer);
-      setResponse(myCharacters);
       navigation('/get-my-jojo');
     } else {
-      // Error, debes elegir una respuesta!!
       setError(true);
     };
   };
