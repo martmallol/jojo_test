@@ -17,7 +17,7 @@ const Home = () => {
         </p>
         <p>
           <em>
-            {'Have you ever wondered which JoJo\'s character matches your personality?'}
+            {'Have you ever wondered which JoJo\'s character matches your personality? '}
             {'Doesn\'t that make you curious?'}
           </em>
         </p>
