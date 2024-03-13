@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 import './QuizButtons.css';
 import { React, useState } from 'react';
-import usePageHandling from '../../../hooks/usePageHandling';
-import useFollowingQuestion from '../../../hooks/useFollowingQuestion';
+import useNextQuestion from '../../../hooks/useNextQuestion';
+import usePreviousQuestion from '../../../hooks/usePreviousQuestion';
+import useGameFinish from '../../../hooks/useGameFinish';
 import questions from '../../../data/questions';
 
 const QuizButtons = ({
@@ -15,33 +16,35 @@ const QuizButtons = ({
   errorHandler
 }) => {
   const [answersHistory, setAnswersHistory] = useState([]);
-  const followingQuestionStateUpdates = useFollowingQuestion(
-    actualQuestion,
-    actualQuestionHandler,
+
+  const commonParameters = [
+    actualAnswerHandler,
     characters,
     charactersHandler,
     answersHistory,
-    setAnswersHistory
-  );
-  const [
-    handleNextPage,
-    handlePreviousPage,
-    handleGameFinish
-  ] = usePageHandling(
-    followingQuestionStateUpdates,
-    answersHistory,
-    actualAnswer,
-    actualAnswerHandler,
+    setAnswersHistory,
     actualQuestion,
-    errorHandler);
+    actualQuestionHandler,
+    errorHandler
+  ];
+
+  const handleNextQuestion = useNextQuestion(
+    ...[actualAnswer, ...commonParameters]
+  );
+  const handlePreviousQuestion = usePreviousQuestion(
+    ...commonParameters
+  );
+  const handleGameFinish = useGameFinish(
+    handleNextQuestion
+  );
 
   return (
     <div className='quizButtons'>
       {actualQuestion !== 0 &&
-        <button className='back' onClick={handlePreviousPage}>Back</button>
+        <button className='back' onClick={handlePreviousQuestion}>Back</button>
       }
       {actualQuestion !== questions.length - 1
-        ? <button className='next' onClick={handleNextPage}>Next</button>
+        ? <button className='next' onClick={handleNextQuestion}>Next</button>
         : <button className='get-my-jojo' onClick={handleGameFinish}>Get my JoJo</button>
       }
     </div>

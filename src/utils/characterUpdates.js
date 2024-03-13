@@ -1,55 +1,42 @@
 import questions from '../data/questions';
-export const updateCharacterValues = (
-  characters,
-  handleCharacters,
-  actualQuestion,
-  answerNumber,
-  type
-) => {
-  const canUpdate = type === 'add' || answerNumber !== -1;
-  if (canUpdate) {
-    const questionIdx = type === 'add'
-      ? actualQuestion
-      : actualQuestion - 1;
-    const answer = questions[questionIdx].options[answerNumber];
-    const updatedCharacters = Object.keys(characters).reduce((acc, key) => {
-      acc[key] = type === 'add'
-        ? characters[key] + answer[key]
-        : characters[key] - answer[key];
-      return acc;
-    }, {});
 
-    handleCharacters(updatedCharacters);
-  };
+export const updateCharactersValues = (
+  someCharacters,
+  aQuestionToReset,
+  anAnswerToDelete,
+  addOrRemove
+) => {
+  const answer = questions[aQuestionToReset].options[anAnswerToDelete];
+  const updatedCharacters = Object.keys(someCharacters).reduce((acc, key) => {
+    acc[key] = someCharacters[key] + answer[key] * addOrRemove;
+    return acc;
+  }, {});
+
+  return updatedCharacters;
 };
 
 export const addCharactersValues = (
-  characters,
-  handleCharacters,
-  actualQuestion,
-  answersHistory,
-  actualAnswer
+  someCharacters,
+  anActualQuestion,
+  anAnswerToAdd
 ) => {
-  updateCharacterValues(
-    characters,
-    handleCharacters,
-    actualQuestion,
-    actualAnswer,
-    'add');
+  return updateCharactersValues(
+    someCharacters,
+    anActualQuestion,
+    anAnswerToAdd,
+    1
+  );
 };
 
 export const restartCharactersValues = (
-  characters,
-  handleCharacters,
-  actualQuestion,
-  answersHistory,
-  actualAnswer
+  someCharacters,
+  aQuestionToReset,
+  anAnswerToDelete
 ) => {
-  const answerNumberToDelete = answersHistory[answersHistory.length - 1];
-  updateCharacterValues(
-    characters,
-    handleCharacters,
-    actualQuestion,
-    answerNumberToDelete,
-    'restart');
+  return updateCharactersValues(
+    someCharacters,
+    aQuestionToReset,
+    anAnswerToDelete,
+    -1
+  );
 };
