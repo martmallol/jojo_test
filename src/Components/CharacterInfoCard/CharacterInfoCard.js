@@ -24,6 +24,7 @@ const CharacterInfoCard = ({ chosenJojo, shareAcross }) => {
             </a>
           </div>
         </div>
+        <hr />
         <div className="card--buttons">
           <div className="share">
             <a className="button1" onClick={() => shareAcross()}>
