@@ -16,9 +16,9 @@
 
 .result {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 10px 10px;
+  gap: 10px;
 
   border-radius: 10px;
   background-color: rgb(255, 200, 214);
@@ -31,10 +31,13 @@
   border-radius: 10px;
 }
 
-.result--first-half {
+.result--text {
+  width: -webkit-fill-available;
   display: flex;
-  gap: 20px;
+  justify-content: space-between;
   align-items: center;
+  gap: 20px;
+  overflow: auto;
 }
 
 .result--name {
@@ -60,12 +63,18 @@
 .result h4 {
   letter-spacing: 4px;
   font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .play-again {
-  width: 100%;
   display: flex;
   margin-top: 15px;
+}
+
+.play-again .button {
+  width: 100%;
 }
 
 @media screen and (max-width: 1240px) {

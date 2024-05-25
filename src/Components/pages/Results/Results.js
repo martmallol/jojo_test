@@ -1,3 +1,4 @@
+/* eslint-disable multiline-ternary */
 import './Results.css';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -12,34 +13,51 @@ const Results = () => {
       setResults(parsedResults);
     }
   }, []);
+
+  console.log(results);
   return (
     <section className="results">
-      <div>
-        <h1>Check your past results!</h1>
-      </div>
-      <div className="results-container">
-        {results.map((result, idx) => {
-          return (
-            <div className="result" key={idx}>
-              <div className="result--first-half">
-                <div className="result--img">
-                  <img src={charactersInfo[result.jojo].profileImage}></img>
+      {results.length !== 0 ? (
+        <>
+          <div>
+            <h1>Check your past results!</h1>
+          </div>
+          <div className="results-container">
+            {results.map((result, idx) => {
+              return (
+                <div className="result" key={idx}>
+                  <div className="result--img">
+                    <img src={charactersInfo[result.jojo].profileImage}></img>
+                  </div>
+                  <div className="result--text">
+                    <span className="result--name">
+                      <h3>{`${result.name} is...`}</h3>
+                      <h2>{`${result.jojo}!`}</h2>
+                    </span>
+                    <h4>{result.date}</h4>
+                  </div>
                 </div>
-                <div className="result--name">
-                  <h3>{`${result.name} is...`}</h3>
-                  <h2>{`${result.jojo}!`}</h2>
-                </div>
-              </div>
-              <h4>{result.date}</h4>
-            </div>
-          );
-        })}
-      </div>
-      <div className="play-again">
-        <Link to="/quiz" className="button1">
-          {'Play Again'}
-        </Link>
-      </div>
+              );
+            })}
+          </div>
+          <div className="play-again">
+            <Link to="/quiz" className="button">
+              {'Play Again'}
+            </Link>
+          </div>
+        </>
+      ) : (
+        <>
+          <div>
+            <h1>No results yet! </h1>
+          </div>
+          <div>
+            <Link to="/quiz" className="button">
+              {'Start Playing!'}
+            </Link>
+          </div>
+        </>
+      )}
     </section>
   );
 };
