@@ -3,18 +3,13 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: [
-    'standard',
-    'plugin:react/recommended'
-  ],
+  extends: ['standard', 'plugin:react/recommended'],
   overrides: [
     {
       env: {
         node: true
       },
-      files: [
-        '.eslintrc.{js,cjs}'
-      ],
+      files: ['.eslintrc.{js,cjs}'],
       parserOptions: {
         sourceType: 'script'
       }
@@ -24,11 +19,9 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: [
-    'react'
-  ],
+  plugins: ['react'],
   rules: {
     indent: ['error', 2],
     semi: ['error', 'always']
   }
-}
+};
