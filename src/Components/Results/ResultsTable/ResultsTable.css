@@ -1,0 +1,16 @@
+.results-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-height: 80vh;
+  overflow: auto;
+}
+
+.play-again {
+  display: flex;
+  margin-top: 15px;
+}
+
+.play-again .button {
+  width: 100%;
+}
