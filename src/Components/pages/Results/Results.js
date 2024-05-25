@@ -17,10 +17,10 @@ const Results = () => {
   console.log(results);
   return (
     <section className="results">
-      {results.length !== 0 ? (
-        <ResultsTable results={results} />
-      ) : (
+      {results.length === 0 ? (
         <NoResults />
+      ) : (
+        <ResultsTable results={results} />
       )}
     </section>
   );
