@@ -1,8 +1,8 @@
 /* eslint-disable multiline-ternary */
 import './Results.css';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import ResultsTable from '../../Results/ResultsTable/ResultsTable.js';
+import NoResults from '../../Results/NoResults/NoResults.js';
 const Results = () => {
   const [results, setResults] = useState([]);
 
@@ -20,16 +20,7 @@ const Results = () => {
       {results.length !== 0 ? (
         <ResultsTable results={results} />
       ) : (
-        <>
-          <div>
-            <h1>No results yet!</h1>
-          </div>
-          <div>
-            <Link to="/quiz" className="button">
-              {'Start Playing!'}
-            </Link>
-          </div>
-        </>
+        <NoResults />
       )}
     </section>
   );
