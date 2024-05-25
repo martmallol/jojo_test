@@ -1,5 +1,6 @@
 import './Results.css';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import charactersInfo from '../../../data/characters';
 const Results = () => {
   const [results, setResults] = useState([]);
@@ -34,8 +35,10 @@ const Results = () => {
           );
         })}
       </div>
-      <div>
-        <h2 className="button1"> Play Again</h2>
+      <div className="play-again">
+        <Link to="/quiz" className="button1">
+          {'Play Again'}
+        </Link>
       </div>
     </section>
   );
