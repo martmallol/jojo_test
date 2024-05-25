@@ -29,10 +29,10 @@ const Quiz = ({ characterLikeness, setCharacterLikeness }) => {
         <QuizBox
           questions={questions}
           actualQuestion={actualQuestion}
-          setActualQuestion={setActualQuestion}
-          setError={setError}
+          actualQuestionHandler={setActualQuestion}
+          errorHandler={setError}
           characterLikeness={characterLikeness}
-          setCharacterLikeness={setCharacterLikeness} />
+          characterLikenessHandler={setCharacterLikeness} />
 
         {error &&
           <div className='error'>
