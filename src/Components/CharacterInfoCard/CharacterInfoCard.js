@@ -24,16 +24,17 @@ const CharacterInfoCard = ({ chosenJojo, shareAcross }) => {
             </a>
           </div>
         </div>
-
-        <div className="share">
-          <Link to="/quiz" className="button1">
-            <span>Play Again</span>
-          </Link>
-          <a className="button1" onClick={() => shareAcross()}>
-            <span>Share</span>
-          </a>
-          <Link to="/results" className="button1">
-            <span>Check Results</span>
+        <div className="card--buttons">
+          <div className="share">
+            <a className="button1" onClick={() => shareAcross()}>
+              <span>Share</span>
+            </a>
+            <Link to="/results" className="button1">
+              <span>Check Results</span>
+            </Link>
+          </div>
+          <Link to="/quiz" className="button">
+            <span>Play Again!</span>
           </Link>
         </div>
       </div>
