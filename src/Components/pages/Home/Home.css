@@ -1,87 +1,89 @@
 .banner {
-    position: relative;
-    left: 0;
-    right: 0;
-    margin: 0.5rem auto;
-    text-align: center;
-    width: auto;
-    max-width: max-content;
-    padding: 1rem;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: 0.5rem auto;
+  text-align: center;
+  width: auto;
+  max-width: max-content;
+  padding: 1rem;
 }
 
 .banner img {
-    border-radius: 1rem;
-    max-width:100%;
-    border: 1px solid black;
+  border-radius: 1rem;
+  max-width: 100%;
+  border: 1px solid black;
 }
 
 .banner h1 {
-    padding: 1rem;
-    color: black;
-    background-color: rgba(245, 245, 245, 0.842);
-    border-radius: 0.5rem;
-    width:fit-content;
+  padding: 1rem;
+  color: black;
+  background-color: rgba(245, 245, 245, 0.842);
+  border-radius: 0.5rem;
+  width: fit-content;
 }
 
-.title  {
-    padding: 0.5rem 2rem;
-    margin-top: -7rem;
-    position: relative;
-    display: block;
+.title {
+  padding: 0.5rem 2rem;
+  margin-top: -7rem;
+  position: relative;
+  display: block;
 }
 
 .game-explanation {
-    padding: 0 1rem;
-    margin-top: 1rem ;
-    margin-bottom: 2rem;
-    max-width: 900px;
-    font-size: 1.3rem;
-    /*background-color: antiquewhite;*/
+  padding: 0 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  max-width: 900px;
+  font-size: 1.3rem;
+  /*background-color: antiquewhite;*/
 }
 
 strong {
-    font-weight:500;
+  font-weight: 500;
 }
 
 .button {
-    color: black/*#ffffff*/ !important;
-    font-weight:400;
-    padding: 10px;
-    background-color: rgb(250, 119, 255); /*#3a10e5;*/
-    border: 0.1rem solid rgb(250, 119, 255);/*#3a10e5;*/
-    border-radius: 0.3rem;
-    font-size: 1.25rem;
-    border: 1px solid black;
+  color: black /*#ffffff*/ !important;
+  font-weight: 400;
+  padding: 10px;
+  background-color: rgb(250, 119, 255);
+  border: 0.1rem solid rgb(250, 119, 255);
+  border-radius: 0.3rem;
+  font-size: 1.25rem;
+  border: 1px solid black;
 }
 
 .button:hover {
-    opacity: 0.8;
-    transition: opacity 0.15s;
-    cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.15s;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 480px) {
-    h1 {
-      font-size: 1.1rem;
-    }
-    .banner {
-        min-height: 100vh;
-        margin: 0 auto;
-    }
+  h1 {
+    font-size: 1.1rem;
+  }
+  .banner {
+    min-height: 100vh;
+    margin: 0 auto;
+  }
 }
 
 @media screen and (max-width: 375px) {
-    p, span {
-        font-size: 18px;
-    }
+  p,
+  span {
+    font-size: 18px;
+  }
 }
 
 @media screen and (max-width: 350px) {
-    h1 {
-        font-size: 1rem;
-      }
+  h1 {
+    font-size: 1rem;
+  }
 
-    p, span {
-        font-size: 13px;
-    }
+  p,
+  span {
+    font-size: 13px;
+  }
 }
