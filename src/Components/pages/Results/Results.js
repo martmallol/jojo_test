@@ -49,7 +49,7 @@ const Results = () => {
       ) : (
         <>
           <div>
-            <h1>No results yet! </h1>
+            <h1>No results yet!</h1>
           </div>
           <div>
             <Link to="/quiz" className="button">

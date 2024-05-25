@@ -36,7 +36,7 @@ const charactersInfo = {
     image: imgJotaro,
     profileImage: profileImgJotaro,
     description: `You are the star of the show. You have a massive presence. 
-    Nevertheless you are super quiet at all times and you don't want to have the spotlight.
+    Nevertheless, you are super quiet and you don't want to have the spotlight.
     You are wrathful at times and lose your temper. However, you have a stoic personality.`
   },
   josuke: {
