@@ -16,7 +16,7 @@ const useMyJojo = (chosenCharacter) => {
       navigator
         .share(shareObject)
         .then(() => console.log('Successful share'))
-        .catch(error => console.log('Error sharing', error));
+        .catch((error) => console.log('Error sharing', error));
     } else {
       console.log('Share not supported');
     }

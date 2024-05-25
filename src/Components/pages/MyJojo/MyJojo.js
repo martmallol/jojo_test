@@ -9,18 +9,20 @@ const MyJojo = ({ characterLikeness }) => {
   const { yourJojo, shareAcross } = useMyJojo(characterLikeness);
 
   return (
-    <main className='MyJojo'>
-      <div className='title'>
-        <h1>{'You\'re...'}</h1>
+    <main className="MyJojo">
+      <div className="title">
+        <h1>{"You're..."}</h1>
       </div>
-      <div className='body'>
-        <div className='picture'>
-          <img src={charactersInfo[yourJojo].image} alt='My Jojo'/>
-          <a href={`https://jojo.fandom.com/wiki/${charactersInfo[yourJojo].name}_${charactersInfo[yourJojo].surname}`} >More info</a>
+      <div className="body">
+        <div className="picture">
+          <img src={charactersInfo[yourJojo].image} alt="My Jojo" />
+          <a
+            href={`https://jojo.fandom.com/wiki/${charactersInfo[yourJojo].name}_${charactersInfo[yourJojo].surname}`}
+          >
+            More info
+          </a>
         </div>
-        <CharacterInfoCard
-          chosenJojo={yourJojo}
-          shareAcross={shareAcross}/>
+        <CharacterInfoCard chosenJojo={yourJojo} shareAcross={shareAcross} />
       </div>
     </main>
   );

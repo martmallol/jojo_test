@@ -4,6 +4,9 @@
 }
 
 .hola {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   background-color: rgb(255, 200, 214);
   padding: 1rem;
   position: relative;
@@ -21,7 +24,7 @@
 /* Character description */
 .description {
   /* background-color: violet; */
-  padding: 1rem;
+  padding: 0 1rem;
 }
 
 /* Submit */
@@ -30,7 +33,6 @@
   padding: 0.5rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid black;
-
 }
 
 input {
@@ -48,7 +50,7 @@ input {
 /* Share result */
 .share {
   /* background-color: brown; */
-  padding: 1.5rem;
+  padding: 0.5rem;
   justify-content: center;
   text-align: center;
   display: flex;
@@ -64,62 +66,61 @@ input {
 }
 
 .button1 {
+  flex: 1;
   background-color: white /*#3a10e5;*/;
-  color: black/*#ffffff*/ !important;
-  font-weight:400;
+  color: black /*#ffffff*/ !important;
+  font-weight: 400;
   padding: 10px;
-  border: 0.1rem solid rgb(250, 119, 255);/*#3a10e5;*/
+  border: 0.1rem solid rgb(250, 119, 255); /*#3a10e5;*/
   border-radius: 0.3rem;
   font-size: 1.25rem;
   border: 1px solid black;
 }
 
-.button1:hover{
-  transition: all .3s;
+.button1:hover {
+  transition: all 0.3s;
   background-color: rgb(255, 240, 190);
   cursor: pointer;
 }
 
 @media screen and (max-width: 400px) {
   .character-info {
-      margin: 0 1rem;
+    margin: 0 1rem;
   }
   .hola {
-      min-width: 50%;
-      min-height: 100vh;
+    min-width: 50%;
+    min-height: 100vh;
   }
   .picture {
-      min-height: 100vh;
+    min-height: 100vh;
   }
   span {
-      font-size: 14px;
+    font-size: 14px;
   }
   .button1 {
-      height: 15px;
-
+    height: 15px;
   }
 }
 
 @media screen and (max-width: 350px) {
   .MyJojo h2 {
-      font-size: 2rem;
+    font-size: 2rem;
   }
   .MyJojo h3 {
-      font-size: 1rem;
+    font-size: 1rem;
   }
 
   .hola {
-      min-height: 60vh;
+    min-height: 60vh;
   }
   .character-info {
-      min-width: 30%;
+    min-width: 30%;
   }
   span {
-      font-size: 10px;
-
+    font-size: 10px;
   }
   #txtbox {
-      font-size:14px;
-      width: 50px
+    font-size: 14px;
+    width: 50px;
   }
 }
