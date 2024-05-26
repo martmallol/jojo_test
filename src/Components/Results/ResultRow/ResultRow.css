@@ -1,12 +1,14 @@
 .result {
-  display: flex;
-  align-items: center;
-  padding: 10px 10px;
-  gap: 10px;
-
   border-radius: 10px;
   background-color: rgb(255, 200, 214);
   border: 1px solid black;
+}
+
+.result--content {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
 }
 
 .result--img img {
@@ -44,12 +46,48 @@
   text-transform: uppercase; /* Capitalizar la primera letra */
 }
 
-.result h4 {
+.result--date {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 2px;
+}
+
+.result--date h4 {
   letter-spacing: 4px;
   font-weight: 400;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.result--date h4,
+.result--date p {
+  margin: 0;
+}
+
+.result--date p {
+  font-weight: 700;
+  padding-right: 5px;
+  cursor: pointer;
+}
+
+.result--details {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  padding: 10px;
+  gap: 5px;
+  text-align: left;
+}
+
+.result--hr {
+  width: 90%;
+}
+
+.result--details h3,
+.result--details p {
+  margin: 0;
 }
 
 @media screen and (max-width: 1240px) {
@@ -60,9 +98,15 @@
   .result--name h3 {
     font-size: 22px;
   }
+
   .result h4 {
     font-size: 14px;
     letter-spacing: 3px;
+  }
+
+  .result--date p {
+    font-size: 12px;
+    padding: 2px;
   }
 }
 
@@ -81,5 +125,13 @@
   .result h4 {
     font-size: 10px;
     letter-spacing: 2.5px;
+  }
+
+  .result--details h3 {
+    font-size: 16px;
+  }
+
+  .result--details p {
+    font-size: 14px;
   }
 }
