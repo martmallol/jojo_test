@@ -5,6 +5,7 @@ import charactersInfo from '../../../data/characters';
 // eslint-disable-next-line react/prop-types
 const ResultRow = ({ jojo, personName, date }) => {
   const [isCompressed, setIsCompressed] = useState(true);
+  const logoSize = 15;
   return (
     <div className="result">
       <div className="result--content">
@@ -28,7 +29,20 @@ const ResultRow = ({ jojo, personName, date }) => {
         <>
           <hr className="result--hr" />
           <div className="result--details">
-            <h3>About this character</h3>
+            <div className="details--title">
+              <img
+                src={charactersInfo[jojo].logo}
+                width={logoSize}
+                height={logoSize}
+              />
+              <h3>About this character</h3>
+              <img
+                src={charactersInfo[jojo].logo}
+                width={logoSize}
+                height={logoSize}
+              />
+            </div>
+
             <p>{charactersInfo[jojo].description}</p>
           </div>
         </>

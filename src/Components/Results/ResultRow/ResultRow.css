@@ -90,6 +90,12 @@
   margin: 0;
 }
 
+.details--title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 @media screen and (max-width: 1240px) {
   .result--name h2 {
     font-size: 26px;
