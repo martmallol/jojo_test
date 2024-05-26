@@ -6,11 +6,25 @@ import { saveResult } from '../../utils/results';
 
 // eslint-disable-next-line react/prop-types
 const CharacterInfoCard = ({ chosenJojo, shareAcross }) => {
+  const logoSize = 40;
+
   return (
     <div className="character-info">
       <div className="hola">
         <div className="description">
-          <h2>{charactersInfo[chosenJojo].name}</h2>
+          <div className="description--title">
+            <img
+              src={charactersInfo[chosenJojo].logo}
+              width={logoSize}
+              height={logoSize}
+            />
+            <h2>{charactersInfo[chosenJojo].name}</h2>
+            <img
+              src={charactersInfo[chosenJojo].logo}
+              width={logoSize}
+              height={logoSize}
+            />
+          </div>
           <p>{charactersInfo[chosenJojo].description}</p>
         </div>
 

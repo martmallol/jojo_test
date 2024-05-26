@@ -28,6 +28,14 @@
   padding: 0 1rem;
 }
 
+.description--title {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  line-height: normal;
+  gap: 20px;
+}
+
 /* Submit */
 .submit {
   display: flex;
