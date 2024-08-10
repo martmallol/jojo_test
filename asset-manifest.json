@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/jojos-quiz-game/static/css/main.183ce0fb.css",
-    "main.js": "/jojos-quiz-game/static/js/main.8130637d.js",
-    "static/js/787.8062fa08.chunk.js": "/jojos-quiz-game/static/js/787.8062fa08.chunk.js",
+    "main.css": "/jojos-quiz-game/static/css/main.0849d134.css",
+    "main.js": "/jojos-quiz-game/static/js/main.20c37b27.js",
+    "static/js/453.fea84892.chunk.js": "/jojos-quiz-game/static/js/453.fea84892.chunk.js",
     "static/media/jotaro.jpg": "/jojos-quiz-game/static/media/jotaro.d3f2fbd10157fa502618.jpg",
     "static/media/poker.jpg": "/jojos-quiz-game/static/media/poker.e7b778bf5903f8e5db78.jpg",
     "static/media/jojos.jpg": "/jojos-quiz-game/static/media/jojos.9377e8b8424a821a25fb.jpg",
@@ -11,18 +11,29 @@
     "static/media/caprese.png": "/jojos-quiz-game/static/media/caprese.124f3b00e22a4a9323d8.png",
     "static/media/giorno.jpg": "/jojos-quiz-game/static/media/giorno.1e2cfc6ebf75fec25738.jpg",
     "static/media/baseball.jpeg": "/jojos-quiz-game/static/media/baseball.979967f468008ef9f13a.jpeg",
+    "static/media/jonathan-logo.png": "/jojos-quiz-game/static/media/jonathan-logo.3814276ebb17724b7bee.png",
+    "static/media/jolyne-logo.png": "/jojos-quiz-game/static/media/jolyne-logo.762a6d3e517301a15133.png",
+    "static/media/jotaro-logo.png": "/jojos-quiz-game/static/media/jotaro-logo.3536c32651cfe8b04215.png",
     "static/media/joseph.jpg": "/jojos-quiz-game/static/media/joseph.1ad6ea819f73eb5858e7.jpg",
+    "static/media/joseph-logo.png": "/jojos-quiz-game/static/media/joseph-logo.eddf5ec161b9e21074d0.png",
     "static/media/josuke.jpg": "/jojos-quiz-game/static/media/josuke.189a00b396c50e09248e.jpg",
+    "static/media/giorno-logo.png": "/jojos-quiz-game/static/media/giorno-logo.44846924d945f07f2648.png",
+    "static/media/josuke-logo.png": "/jojos-quiz-game/static/media/josuke-logo.af54ae44c31e97fe2bb8.png",
+    "static/media/jolyne-chikita.jpg": "/jojos-quiz-game/static/media/jolyne-chikita.8fc3bf8dce2eb76acd60.jpg",
+    "static/media/jonathan-chikito.jpg": "/jojos-quiz-game/static/media/jonathan-chikito.8769d33da18fb9d58d7f.jpg",
     "static/media/funeral.jpg": "/jojos-quiz-game/static/media/funeral.2c3e5a5012720f036aa6.jpg",
+    "static/media/josuke-chikito.jpg": "/jojos-quiz-game/static/media/josuke-chikito.9f83dbdeb6646befc580.jpg",
+    "static/media/giorno-chikito.jpg": "/jojos-quiz-game/static/media/giorno-chikito.6df8cc3bbfe6fad599e9.jpg",
+    "static/media/joseph-chikito.jpg": "/jojos-quiz-game/static/media/joseph-chikito.98c58dbeae119387c542.jpg",
+    "static/media/jotaro-chikito.jpg": "/jojos-quiz-game/static/media/jotaro-chikito.25a0c34f68b09d9a577f.jpg",
     "static/media/jojo-logo.jpg": "/jojos-quiz-game/static/media/jojo-logo.36b1db32ae820ff0a5e4.jpg",
-    "static/media/logo.svg": "/jojos-quiz-game/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/jojos-quiz-game/index.html",
-    "main.183ce0fb.css.map": "/jojos-quiz-game/static/css/main.183ce0fb.css.map",
-    "main.8130637d.js.map": "/jojos-quiz-game/static/js/main.8130637d.js.map",
-    "787.8062fa08.chunk.js.map": "/jojos-quiz-game/static/js/787.8062fa08.chunk.js.map"
+    "main.0849d134.css.map": "/jojos-quiz-game/static/css/main.0849d134.css.map",
+    "main.20c37b27.js.map": "/jojos-quiz-game/static/js/main.20c37b27.js.map",
+    "453.fea84892.chunk.js.map": "/jojos-quiz-game/static/js/453.fea84892.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.183ce0fb.css",
-    "static/js/main.8130637d.js"
+    "static/css/main.0849d134.css",
+    "static/js/main.20c37b27.js"
   ]
 }
